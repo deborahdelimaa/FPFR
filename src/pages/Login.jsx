@@ -42,7 +42,7 @@ function Login() {
 
 
   return (
-    <section>
+    <section className="formdiv">
 
 <form className="form" onSubmit={handleSubmit}>
   <p>Login</p>
@@ -60,7 +60,7 @@ function Login() {
   </div>
   <button className="submit">submit</button>
 </form> 
-      <p>Don't have an account? <Link className="link" to="/signup">Signup</Link></p> 
+      <p className="auth-paragraph">Don't have an account? <Link className="link" to="/signup">Signup</Link></p> 
     </section>
   );
 }

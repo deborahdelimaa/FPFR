@@ -1,158 +1,166 @@
-
-
-body{
-    background-image: url("/src/images/wallpaper.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+  background-image: url("/src/images/wallpaper.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  to {
+    transform: rotate(360deg);
   }
-  .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
   }
-  
-  @keyframes logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.group {
+  position: relative;
+}
+
+.form {
+    margin-top: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 120px 40px;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  padding-right: 40px;
+  padding-left: 40px;
+  background-color: rgba(255, 255, 255, 0.454);
+  border-radius: 20px;
+  position: relative;
+  width: 17vw;
+}
+
+.form p {
+  padding-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #22577a;
+}
+
+.container-1 {
+  padding-top: 30px;
+}
+
+.main-input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 185px;
+  border: none;
+  border-bottom: 1px solid #6c6c6c;
+  background: transparent;
+  color: #22577a;
+}
+
+.main-input:focus {
+  outline: none;
+  border-bottom-color: #22577a;
+}
+
+.lebal-email {
+  color: #999999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.main-input:focus ~ .lebal-email,
+.main-input:valid ~ .lebal-email {
+  top: -20px;
+  font-size: 14px;
+  color: #22577a;
+}
+
+.highlight-span {
+  position: absolute;
+  height: 60%;
+  width: 0px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.main-input:focus ~ .highlight-span {
+  -webkit-animation: input-focus 0.3s ease;
+  animation: input-focus 0.3s ease;
+}
+
+@keyframes input-focus {
+  from {
+    background: rgb(128, 237, 153);
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-      animation: logo-spin infinite 20s linear;
-    }
-  }
-  
-  .card {
-    padding: 2em;
-  }
-  
-  .read-the-docs {
-    color: #888;
-  }
-  
-  
-  
-  .group {
-    position: relative;
-  }
-  
-  .form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 120px 40px;
-    padding-top: 60px;
-    padding-bottom: 90px;
-    padding-right: 40px;
-    padding-left: 40px;
-    background-color: rgba(255, 255, 255, 0.454);
-    border-radius: 20px;
-    position: relative;
-  }
-  
-  .form p {
-    padding-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: .5px;
-    color:#22577A;
-  }
-  
-  .container-1 {
-    padding-top: 30px;
-  }
-  
-  .main-input {
-    font-size: 16px;
-    padding: 10px 10px 10px 5px;
-    display: block;
+
+  to {
     width: 185px;
-    border: none;
-    border-bottom: 1px solid #6c6c6c;
-    background: transparent;
-    color: #22577A;
   }
-  
-  .main-input:focus {
-    outline: none;
-    border-bottom-color:#22577A;
-  }
-  
-  .lebal-email {
-    color: #999999;
-    font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-  }
-  
-  .main-input:focus ~ .lebal-email,
-  .main-input:valid ~ .lebal-email {
-    top: -20px;
-    font-size: 14px;
-    color: #22577A
-  }
-  
-  .highlight-span {
-    position: absolute;
-    height: 60%;
-    width: 0px;
-    top: 25%;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.5;
-  }
-  
-  .main-input:focus ~ .highlight-span {
-    -webkit-animation: input-focus 0.3s ease;
-    animation: input-focus 0.3s ease;
-  }
-  
-  @keyframes input-focus {
-    from {
-      background: rgb(128, 237, 153);
-    }
-  
-    to {
-      width: 185px;
-    }
-  }
-  
-  .submit {
-    margin-top: 1.2rem;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: #2EE394;
-    color: #22577A;
-  }
-  
-  .link{
-    color: #22577A
-  }
+}
+
+.submit {
+  margin-top: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #2ee394;
+  color: #22577a;
+}
+
+.link {
+  color: #22577a;
+}
+
+.formdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-paragraph{
+    color:white;
+}

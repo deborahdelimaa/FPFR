@@ -31,7 +31,7 @@ function Signup() {
 
 
   return (
-    <section>
+    <section className="formdiv">
 
 <form className="form" onSubmit={handleSubmit}>
   <p>Signup</p>
@@ -56,7 +56,7 @@ function Signup() {
   </div>
   <button className="submit">submit</button>
 </form>
-     <p>Already have an account? <Link className="link" to="/Login">Login</Link></p> 
+     <p className="auth-paragraph">Already have an account? <Link className="link" to="/Login">Login</Link></p> 
       
     </section>
   );
