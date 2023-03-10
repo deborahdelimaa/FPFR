@@ -45,17 +45,15 @@ function Login() {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
        
-        <label htmlFor="email">Email:</label>
-        <input type="email" value={email} onChange={handleEmail} />
-
-        <label htmlFor="password">Password</label>
-        <input type="password" value={password} onChange={handlePassword} />
-
+        <input type="email" value={email} onChange={handleEmail} placeholder="Email" />
+        <br />        
+        <input type="password" value={password} onChange={handlePassword} placeholder="Password"/>
+        <br />
         <button type="submit">Login</button>
 
       </form>
-      <p>Don't have an account?</p>
-      <Link to="/signup">Signup</Link>
+      <p>Don't have an account? <Link to="/signup">Signup</Link></p>
+      
     </section>
   );
 }

@@ -33,20 +33,18 @@ function Signup() {
     <section>
       <h1>Signup</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input type="text" value={name} onChange={handleName} />
-
-        <label htmlFor="email">Email:</label>
-        <input type="email" value={email} onChange={handleEmail} />
-
-        <label htmlFor="password">Password</label>
-        <input type="password" value={password} onChange={handlePassword} />
-
+        
+        <input type="text" value={name} onChange={handleName} placeholder="Name" />
+        <br />        
+        <input type="email" value={email} onChange={handleEmail} placeholder="Email" />
+        <br />       
+        <input type="password" value={password} onChange={handlePassword} placeholder="Password"/>
+        <br />
         <button type="submit">Create account</button>
 
       </form>
-      <p>Already have an account?</p>
-      <Link to="/login">Login</Link>
+      <p>Already have an account? <Link to="/login">Login</Link></p>
+      
     </section>
   );
 }
