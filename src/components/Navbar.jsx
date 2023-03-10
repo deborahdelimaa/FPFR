@@ -1,12 +1,12 @@
 import React, {useContext} from 'react'
-import { Link } from 'react-router-dom'
-import { AuthContext } from '../context/auth.context'
-
+import { Link } from "react-router-dom"
+import { AuthContext } from "../context/auth.context"
+import "../navbar.css";
 function Navbar() {
     const {loggedIn, user, logout}= useContext(AuthContext)
   return (
-    <nav>
-    <Link to="/" >Home </Link>
+    <nav className="nav">
+    <Link to="/" >Buyable </Link>
     {loggedIn ? (
         <>
     <Link to="/projects" >Projects </Link>
@@ -22,5 +22,4 @@ function Navbar() {
     </nav>
   )
 }
-
 export default Navbar

@@ -1,7 +1,7 @@
-# FPFR
+# Buyable-Client
 
 
-# Project Name
+# Buyable
 
 <br>
 
@@ -54,7 +54,7 @@ This is a app to sell or trade products. This products can be new or used.
 | `/`                          | HomePage             | public `<Route>`           | Home page.                                                |
 | `/product-list`              | ProductList        | user only `<PrivateRoute>` | User and player profile for the current user. 
 | `/bought-product-list`              | BoughtProductList        | user only `<PrivateRoute>` | User and player profile for the current user.             |
- `/bought-product/:boughtProductId             | BoughtProductDetails     | user only `<PrivateRoute>` | User and player profile for the current user.             |
+ `/bought-product/:boughtProductId           | BoughtProductDetails        | user only `<PrivateRoute>` | User and player profile for the current user.             |
 | `/product/create`           | CreateProduct| user only `<PrivateRoute>` | Create new selling product.                               |
 | `/product/edit`         | EditProduct      | user only `<PrivateRoute>` | Edit product form.                                   |
 | `/product/:productId`    | ProductDetails   | user only `<PrivateRoute>` | products details.                                    |
@@ -256,6 +256,16 @@ Components:
 
 
 
+
+<br>
+
+<br>
+
+## Packages
+
+- npm install @mui/material @mui/styled-engine-sc styled-components
+- npm install react-bootstrap bootstrap
+<br>
 
 
 

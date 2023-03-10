@@ -9,27 +9,31 @@ import EditProject from "./pages/EditProject";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./components/Private";
+import Searchbar from './components/Searchbar';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/projects"
-          element={
-            <Private>
-              <Projects />
-            </Private>
-          }
-        />
-        <Route path="/projects/:id" element={<ProjectsDetails />} />
-        <Route path="/projects/new" element={<AddProject />} />
-        <Route path="/projects/edit/:id" element={<EditProject />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+      <Searchbar />
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/projects"
+            element={
+              <Private>
+                <Projects />
+              </Private>
+            }
+          />
+          <Route path="/projects/:id" element={<ProjectsDetails />} />
+          <Route path="/projects/new" element={<AddProject />} />
+          <Route path="/projects/edit/:id" element={<EditProject />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
     </div>
   );
 }

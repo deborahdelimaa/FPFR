@@ -42,7 +42,7 @@ function Login() {
 
 
   return (
-    <section>
+    <section className="login">
 
 <form className="form" onSubmit={handleSubmit}>
   <p>Login</p>
