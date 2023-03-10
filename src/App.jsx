@@ -9,11 +9,13 @@ import EditProject from "./pages/EditProject";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./components/Private";
+import Searchbar from './components/Searchbar';
 
 function App() {
   return (
     <div>
       <Navbar />
+      <Searchbar />
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
