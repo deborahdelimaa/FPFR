@@ -7,38 +7,54 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const categories = ['Other', 'Vehicles', 'Technology', 'Furniture', 'Sport', 'Animals'];
+function Searchbar(props) {
+  const { setCondition, setCategory, setSearch } = props;
 
-function Searchbar() {
-  const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState('');
+  const categories = [
+    'All',
+    'Other',
+    'Vehicles',
+    'Technology',
+    'Furniture',
+    'Sport',
+    'Animals',
+  ];
+  const conditions = ['All', 'Used', 'New'];
 
   const handleSearch = (e) => setSearch(e.target.value);
-  const handleFilter = (e) => setFilter(e.target.value);
+  const handleCategory = (e) => setCategory(e.target.value);
+  const handleCondition = (e) => setCondition(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   // axios.post {search, filter}
 
   return (
     <section>
-      <form>
-        <input
-          type="text"
-          name="search"
-          id="search"
-          value={search}
-          onChange={handleSearch}
-        />
-
+      <form onSubmit={handleSubmit}>
         <select
-          name="filter"
-          id="filter"
-          onChange={handleFilter}
-          value={filter}
+          required="true"
+          name="category"
+          id="category"
+          onChange={handleCategory}
         >
           {categories.map((filters) => {
             return <option value={filters}>{filters}</option>;
           })}
         </select>
+        <select
+          required="true"
+          name="condition"
+          id="condition"
+          onChange={handleCondition}
+        >
+          {conditions.map((filters) => {
+            return <option value={filters}>{filters}</option>;
+          })}
+        </select>
+        <input type="text" name="search" id="search" onChange={handleSearch} />
       </form>
     </section>
   );
