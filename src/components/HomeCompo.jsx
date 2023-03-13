@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import homeCompon from '../homeCompon.css'
+import '../homeCompon.css'
 import { Link } from 'react-router-dom';
 
 function HomeCompo() {
