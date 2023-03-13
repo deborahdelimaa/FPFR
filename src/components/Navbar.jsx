@@ -10,8 +10,8 @@ function Navbar() {
     <Link to="/" >Buyable </Link>
     {loggedIn ? (
         <>
-    <Link to="/projects" >Projects </Link>
-    <Link to="/projects/new" >Add Project </Link>
+    <Link to="/products" >Products </Link>
+    <Link to="/products/new" >Add Product </Link>
     <button onClick={logout}>Logout</button>
 </>
     ): (

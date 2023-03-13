@@ -3,11 +3,11 @@ import axios from "axios"
 import { useNavigate, useParams } from 'react-router-dom'
 
 
-function EditProject() {
-    const [title, setTitle] = useState("")
+function EditProduct() {
+    const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     
-    const handleTitle = (e) => setTitle(e.target.value)
+    const handleName = (e) => setName(e.target.value)
     const handleDescription = (e) => setDescription(e.target.value)
 
     const navigate = useNavigate()
@@ -16,33 +16,33 @@ function EditProject() {
     
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const body = {title, description}
+        const body = {name, description}
         try {
-            await axios.put(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, body)
-            navigate(`/projects/${id}`)
+            await axios.put(`${import.meta.env.VITE_API_URL}/api/productvs/${id}`, body)
+            navigate(`/products/${id}`)
             
         } catch (error) {
             console.log(error)
         }
     }
 
-    const getProject = async () => {
+    const getProduct = async () => {
         try {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/projects/${id}`
+            `${import.meta.env.VITE_API_URL}/api/products/${id}`
         );
           console.log(response.data);
-          setTitle(response.data.title)
+          setName(response.data.name)
           setDescription(response.data.description)
         } catch (error) {
           console.log(error);
         }
       };
 
-      const deleteProject = async () => {
+      const deleteProduct = async () => {
         try {
-            await axios.delete(`${import.meta.env.VITE_API_URL}/api/projects/${id}`)
-            navigate("/projects")
+            await axios.delete(`${import.meta.env.VITE_API_URL}/api/products/${id}`)
+            navigate("/products")
         } catch (error) {
             console.log(error)
             
@@ -50,26 +50,26 @@ function EditProject() {
       }
 
       useEffect(()=> {
-        getProject()
+        getProduct()
       }, [])
     
       
   return (
     <section>
-<h1>Edit project:</h1>
+<h1>Edit product:</h1>
 <form onSubmit={handleSubmit}>
-<label htmlFor="title">Title</label>
-<input type="text" name='title' id="title" value={title} onChange={handleTitle} />
+<label htmlFor="name">Name</label>
+<input type="text" name='name' id="name" value={name} onChange={handleName} />
 
 <label htmlFor="description">Description</label>
 <input type="text" name="description" id="description" value={description} onChange={handleDescription} />
 <button type="submit">Edit</button>
 </form>
 
-<button onClick={deleteProject}>Delete</button>
+<button onClick={deleteProduct}>Delete</button>
 
     </section>
   )
 }
 
-export default EditProject
+export default EditProduct

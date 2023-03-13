@@ -2,47 +2,47 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
-function ProjectsDetails() {
-  const [project, setProject] = useState(null);
+function ProductsDetails() {
+  const [product, setProduct] = useState(null);
   const { id } = useParams();
 
-  const getProject = async () => {
+  const getProduct = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/projects/${id}`
+        `${import.meta.env.VITE_API_URL}/api/products/${id}`
       );
       console.log(response.data);
-      setProject(response.data);
+      setProduct(response.data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    getProject();
+    getProduct();
   }, [id]);
 
   return (
     <div>
-      {project && (
+      {product && (
         <>
-          <h1>{project.title}</h1>
-          <p>{project.description}</p>
+          <h1>{product.name}</h1>
+          <p>{product.description}</p>
         </>
       )}
       <h2>Tasks</h2>
-      {project &&
-        project.tasks.map((task) => {
+      {product &&
+        product.tasks.map((task) => {
           return (
             <div key={task._id}>
-              <h3>{task.title}</h3>
+              <h3>{task.name}</h3>
               <p>{task.description}</p>
             </div>
           );
         })}
-        {project && <Link to={`/projects/edit/${project._id}`}>Edit project</Link>}
+        {product && <Link to={`/products/edit/${product._id}`}>Edit product</Link>}
     </div>
   );
 }
 
-export default ProjectsDetails;
+export default ProductsDetails;

@@ -2,34 +2,31 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import ProjectsDetails from "./pages/ProjectsDetails";
-import AddProject from "./pages/AddProject";
-import EditProject from "./pages/EditProject";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
+import AddProduct from "./pages/AddProduct";
+import EditProduct from "./pages/EditProduct";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./components/Private";
-import Searchbar from './components/Searchbar';
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Searchbar />
+      
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/projects"
-            element={
+          <Route path="/products" element={
               <Private>
-                <Projects />
+                <Products />
               </Private>
             }
           />
-          <Route path="/projects/:id" element={<ProjectsDetails />} />
-          <Route path="/projects/new" element={<AddProject />} />
-          <Route path="/projects/edit/:id" element={<EditProject />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/products/new" element={<AddProduct />} />
+          <Route path="/products/edit/:id" element={<EditProduct />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
         </Routes>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class ProjectService {
+class ProductService {
   constructor() {
     this.api = axios.create({
       baseURL: import.meta.env.VITE_API_URL || "http://localhost:5005",
@@ -22,26 +22,26 @@ return config;
 
   //Create the methods to connet to the api
 
-  //Get all projects
+  //Get all product
   
-  getAllProjects = () => {
-    return this.api.get("/api/projects")
+  getAllProducts = () => {
+    return this.api.get("/api/products")
     //this is the same as axios.get(`${import.meta.env.VITE_API_URL}/api/projects`)
   }
   
-  //create a project 
+  //create a product 
   //body refers to the object with title and description
-  createProject = (body) => {
-  return this.api.post("/api/projects", body)
+  createProduct = (body) => {
+  return this.api.post("/api/products", body)
   }
 
-  getSingleProject = (id) =>{
-    return this.api.get(`/api/projects/${id}`)
+  getSingleProduct = (id) =>{
+    return this.api.get(`/api/products/${id}`)
   }
 }
 
 
 
-const projectService = new ProjectService()
+const productService = new ProductService()
 
-export default projectService
+export default productService

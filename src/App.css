@@ -11,3 +11,7 @@ body {
   margin: auto;
   padding: 10px;
 }
+
+.allProductsImg {
+  width: 10vw;
+}
