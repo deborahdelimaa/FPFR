@@ -30,16 +30,7 @@ function ProductsDetails() {
           <p>{product.description}</p>
         </>
       )}
-      <h2>Tasks</h2>
-      {product &&
-        product.tasks.map((task) => {
-          return (
-            <div key={task._id}>
-              <h3>{task.name}</h3>
-              <p>{task.description}</p>
-            </div>
-          );
-        })}
+      
         {product && <Link to={`/products/edit/${product._id}`}>Edit product</Link>}
     </div>
   );

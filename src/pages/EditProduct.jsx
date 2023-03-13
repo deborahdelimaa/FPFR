@@ -18,7 +18,7 @@ function EditProduct() {
         e.preventDefault()
         const body = {name, description}
         try {
-            await axios.put(`${import.meta.env.VITE_API_URL}/api/productvs/${id}`, body)
+            await axios.put(`${import.meta.env.VITE_API_URL}/api/products/${id}`, body)
             navigate(`/products/${id}`)
             
         } catch (error) {

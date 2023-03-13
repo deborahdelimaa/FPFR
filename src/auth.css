@@ -152,7 +152,13 @@ body {
 }
 
 .link {
-  color: #22577a;
+  text-decoration:none;
+  color: black;
+}
+
+.link:hover {
+  text-decoration:none;
+  color: black;
 }
 
 .formdiv {
