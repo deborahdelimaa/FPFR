@@ -1,0 +1,21 @@
+.compoDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  padding: 30px;
+}
+
+.bg-white {
+  max-width: 35vw;
+  max-height: 70vh;
+  margin-bottom: 40px;
+}
+
+.title {
+  text-align: center;
+  padding: 40px;
+  font-weight: 500;
+}

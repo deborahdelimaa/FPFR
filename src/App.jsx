@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navigationbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
@@ -9,16 +9,23 @@ import EditProduct from "./pages/EditProduct";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./components/Private";
+import Reviews from "./pages/Reviews";
+import ShoppingCart from "./pages/ShoppingCart";
+import MyProducts from "./pages/MyProducts";
+import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      
+      <Navigationbar />
+
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={
+          <Route
+            path="/products"
+            element={
               <Private>
                 <Products />
               </Private>
@@ -29,6 +36,11 @@ function App() {
           <Route path="/products/edit/:id" element={<EditProduct />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/shoppingCart" element={<ShoppingCart />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/myProducts" element={<MyProducts />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/edit/:id" element={<EditProfile />} />
         </Routes>
       </div>
     </div>

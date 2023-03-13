@@ -1,11 +1,12 @@
 import React from 'react'
-
+import HomeCompo from '../components/HomeCompo'
 function Home() {
   return (
     <div>
-        <h1>Home</h1>
+        <HomeCompo/>
     </div>
   )
 }
 
 export default Home
+

@@ -2,27 +2,52 @@ import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/auth.context'
 import "../navbar.css";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 
-function Navbar() {
+
+
+function Navigationbar() {
     const {loggedIn, user, logout}= useContext(AuthContext)
   return (
-    <nav className="nav">
-    <Link to="/" >Buyable </Link>
+    <div >
+    <div></div>
+    <Navbar style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} variant="dark">
+    <Container>
+    <Navbar.Brand href="/">Buyable</Navbar.Brand>
+          <Nav className="me-auto">
     {loggedIn ? (
         <>
-    <Link to="/products" >Products </Link>
-    <Link to="/products/new" >Add Product </Link>
-    <button onClick={logout}>Logout</button>
+        <Nav.Link  href="/products">Products</Nav.Link>
+            <Nav.Link  href="/products/new">Sell</Nav.Link>
+            <Nav.Link  href="/profile">Profile</Nav.Link>
+            
+            <div className='flex-nav'>
+            
+            <button  onClick={logout} className="cta">
+    <span className="hover-underline-animation">Logout </span>
+    <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal" color="white">
+        <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+    </svg>
+</button>
+            </div>
 </>
     ): (
         <>
-    <Link to="/signup" >Signup</Link>
-    <Link to="/login" >Login </Link>
+        
+        <Nav.Link style={{marginLeft:"75vw"}} href="/signup">Signup</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+            
+            
  </>
     )}
-    </nav>
+    </Nav>
+        </Container>
+      </Navbar>
+      </div>
   )
 }
 
-export default Navbar
+export default Navigationbar
 

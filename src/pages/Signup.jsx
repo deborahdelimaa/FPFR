@@ -49,7 +49,7 @@ function Signup() {
   </div>
   <div className="container-1">
     <div className="group">
-      <input required="true" className="main-input" type="text" value={password} onChange={handlePassword} />
+      <input required="true" className="main-input" type="password" value={password} onChange={handlePassword} />
       <span className="highlight-span"></span>
       <label className="lebal-email">Password</label>
     </div>
