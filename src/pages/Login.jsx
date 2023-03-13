@@ -34,7 +34,7 @@ function Login() {
         authenticateUser()
 
       console.log(response.data.authToken);
-      navigate("/projects");
+      navigate("/products");
     } catch (error) {
       console.log(error);
     }

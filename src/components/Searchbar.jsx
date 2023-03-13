@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const filterOption = ['Animals', 'Tech', 'Vehicles', 'House'];
+const categories = ['Other', 'Vehicles', 'Technology', 'Furniture', 'Sport', 'Animals'];
 
 function Searchbar() {
   const [search, setSearch] = useState('');
@@ -35,7 +35,7 @@ function Searchbar() {
           onChange={handleFilter}
           value={filter}
         >
-          {filterOption.map((filters) => {
+          {categories.map((filters) => {
             return <option value={filters}>{filters}</option>;
           })}
         </select>
