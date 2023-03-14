@@ -43,7 +43,7 @@ return config;
     return this.api.get("/bought-product-list")
 }
 
-
+}
 
 const productService = new ProductService()
 
