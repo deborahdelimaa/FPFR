@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
 
 function ProductsDetails() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
+  const { user, loading } = useContext(AuthContext);
 
   const getProduct = async () => {
     try {
