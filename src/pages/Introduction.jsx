@@ -23,10 +23,10 @@ function Introduction() {
         Signup and login to see more.</p>
       </div>
       <div className="intro-button">
-    <Link to="/signup"> <button class="button">
+    <Link to="/signup"> <button class="button-one">
     Signup
 </button> </Link>
-<Link to="/login"><button class="button">
+<Link to="/login"><button class="button-one">
     Login
 </button></Link>
       </div>

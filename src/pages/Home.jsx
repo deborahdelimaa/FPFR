@@ -1,22 +1,22 @@
-import React from 'react'
-import HomeCompo from '../components/HomeCompo'
-import Introduction from './Introduction'
+import React from "react";
+import HomeCompo from "../components/HomeCompo";
+import Introduction from "./Introduction";
+import { useContext } from "react";
 function Home() {
-  const {loggedIn, user, logout}= useContext(AuthContext)
+  const { loggedIn } = useContext(AuthContext);
   return (
     <div>
-    {loggedIn ? (
-    <>
-        <HomeCompo/>
-    </>
-): (
-  <>
-    <Introduction/>
-  </>
-)}
-  </div>
-  )
+      {loggedIn ? (
+        <>
+          <HomeCompo />
+        </>
+      ) : (
+        <>
+          <Introduction />
+        </>
+      )}
+    </div>
+  );
 }
 
-export default Home
-
+export default Home;
