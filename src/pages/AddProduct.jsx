@@ -1,11 +1,12 @@
-import React, { useState, useContext } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext} from 'react';
+import { useNavigate} from 'react-router-dom';
 import ProductService from '../services/product.service';
 import { AuthContext } from '../context/auth.context';
+import { useParams } from 'react-router-dom';
 
 function AddProduct() {
   const {user} = useContext(AuthContext)
+  const {id} =  useParams()
 
   const [img, setImg] = useState('')
   const [name, setName] = useState('');
@@ -13,7 +14,7 @@ function AddProduct() {
   const [category, setCategory] = useState('Other');
   const [condition, setCondition] = useState('Used');
   const [description, setDescription] = useState('');
-  const [seller, setSeller] = useState(user._id);
+/*   const [seller, setSeller] = useState(user._id);  */
 
   const categories = ['Other', 'Vehicles', 'Technology', 'Furniture', 'Sport', 'Animals'];
   const conditions = ['Used', 'New']
@@ -41,31 +42,31 @@ function AddProduct() {
   };
   return (
     <section className="formdiv">
-      <form className="form" onSubmit={handleSubmit}>
+      <form style={{marginTop:"4vh", width:"30vw"}}className="form" onSubmit={handleSubmit}>
       <p>Create Product:</p>
 
-        <input className="main-input" type="file" name='img' id='img' value={img} onChange={img} placeholder="Add Image" />    
         <input required="true" className="main-input" type="text" name="name" id="name" value={name} onChange={handleName} placeholder="Name" />
         <br />
-        <input required="true" className="main-input" type="text" name="price" id="price" value={price} onChange={handlePrice} placeholder="Price" />
+        <input required="true" className="main-input" type="text" name="description" id="description" value={description} onChange={handleDescription} placeholder="Description" />
         <br />
+        <input required="true" className="main-input" type="text" name="price" id="price" value={price} onChange={handlePrice} placeholder="Price" />
         <select required="true" className="main-input" name="category" id="category" onChange={handleCategory} value={category}>
           {categories.map((filters) => {
             return <option value={filters}>{filters}</option>;
           })}
         </select>
-        <br />
+        
         <select required="true" className="main-input" name="condition" id="condition" onChange={handleCondition} value={condition}>
           {conditions.map((filters) => {
             return <option value={filters}>{filters}</option>;
           })}
         </select>
-        <br />
-        <input required="true" className="main-input" type="text" name="description" id="description" value={description} onChange={handleDescription} placeholder="Description" />
-        <br />
-        <input required="true" className="main-input" type="text" name="seller" id="seller" value={seller} onChange={handleSeller} hidden/>
-        <br />
-        <button required="true" className="submit" type="submit">Create Product</button>
+        
+       
+        {/* <input required="true" className="main-input" type="text" name="seller" id="seller" value={seller} onChange={handleSeller} />
+        <br /> */}
+        <input className="main-input" type="file" name='img' id='img' value={img} onChange={img} placeholder="Add Image" />    
+        <button style={{marginRight:"0.5vw"}}required="true" className="submit" type="submit">Create Product</button>
       </form>
      </section>
     );
