@@ -31,14 +31,28 @@ function MyProducts() {
       {myProducts &&
         myProducts.map((product) => {
           return (
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={product.img} />
-              <Card.Body>
+            <Card className='product-card'>
                 <Card.Title>{product.name}</Card.Title>
-                <Card.Text>{product.description}</Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
+                <Card.Body>
+                  <Card.Img
+                    variant="left"
+                    src={product.img}
+                    alt="product img"
+                    className="allProductsImg"
+                  />
+                  <Card.Text>
+                    Category: {product.category}
+                    <br />
+                    Condition: {product.condition}
+                    <br />
+                    Price: {product.price} €
+                    <br />
+                    Description: {product.description}
+                    <br />
+                    Seller: {product.seller && product.seller.name}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
           );
         })}
     </section>

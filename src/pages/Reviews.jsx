@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth.context";
 
 
 function Reviews() {
-  const getReviews =
+  
   return (
     <div>
 
