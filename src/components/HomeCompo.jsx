@@ -33,7 +33,7 @@ function HomeCompo() {
     </Link>
     </div>
     <div>
-    <Link to="/shoppingCart">
+    <Link to="/products/bought">
     <Card className="bg-white text-black">
       <Card.Img src={MyCard} alt="Card image" />
       <Card.ImgOverlay className="imgHover">

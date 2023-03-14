@@ -38,7 +38,7 @@ function App() {
           <Route path="/products/edit/:id" element={<EditProduct />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/shoppingCart" element={<ShoppingCart />} />
+          <Route path="/products/bought" element={<ShoppingCart />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/myProducts" element={<MyProducts />} />
           <Route path="/profile" element={<Profile />} />

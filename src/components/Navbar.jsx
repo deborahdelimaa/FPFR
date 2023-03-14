@@ -4,6 +4,7 @@ import { AuthContext } from '../context/auth.context'
 import "../navbar.css";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Buyable from '../images/Buyable3.png'
 
@@ -20,10 +21,19 @@ function Navigationbar() {
           <Nav className="me-auto">
     {loggedIn ? (
         <>
-        <Nav.Link  href="/products">Products</Nav.Link>
+
+        <NavDropdown style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products">Products</NavDropdown.Item>
+              <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/myproducts">MyProducts</NavDropdown.Item>
+              <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products/new">Sell</NavDropdown.Item>            
+              <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/profile">Profile</NavDropdown.Item>
+            </NavDropdown>
+
+        {/* <Nav.Link  href="/products">Products</Nav.Link>
+        <Nav.Link  href="/myproducts">MyProducts</Nav.Link>
             <Nav.Link  href="/products/new">Sell</Nav.Link>
             <Nav.Link  href="/profile">Profile</Nav.Link>
-            
+             */}
             <div className='flex-nav'>
             
             <button  onClick={logout} className="cta">

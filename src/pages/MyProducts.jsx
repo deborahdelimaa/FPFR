@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import productService from "../services/product.service";
 import { AuthContext } from "../context/auth.context";
-import { Link } from 'react-router-dom'
 
 function MyProducts() {
   const [myProducts, setMyProducts] = useState([]);
@@ -31,28 +30,14 @@ function MyProducts() {
       {myProducts &&
         myProducts.map((product) => {
           return (
-            <Card className='product-card'>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={product.img} />
+              <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
-                <Card.Body>
-                  <Card.Img
-                    variant="left"
-                    src={product.img}
-                    alt="product img"
-                    className="allProductsImg"
-                  />
-                  <Card.Text>
-                    Category: {product.category}
-                    <br />
-                    Condition: {product.condition}
-                    <br />
-                    Price: {product.price} €
-                    <br />
-                    Description: {product.description}
-                    <br />
-                    Seller: {product.seller && product.seller.name}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+                <Card.Text>{product.description}</Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
           );
         })}
     </section>
