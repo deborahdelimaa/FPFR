@@ -27,5 +27,9 @@ body {
 .dropdown-menu[data-bs-popper] {
   background-color: #3FB8C3;
   color: #D0EBD7;
+}
 
+.footer {
+  background-color: #3FB8C3;
+  color: #D0EBD7;
 }

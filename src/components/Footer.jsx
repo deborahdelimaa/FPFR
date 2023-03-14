@@ -6,10 +6,17 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Footer() {
   return (
-    <div>
-<Navbar className='footer' collapseOnSelect expand="lg" bg="green" variant="light">
+    <footer className='footer'>
+
+     <Navbar.Brand style={{fontSize:"1em"}}> © All rights reserved to Buyables</Navbar.Brand>
+
+     <section style={{fontSize:"1em"}}>Colaborators:</section>
+     <p>Duarte França</p>
+
+    
+{/* <Navbar className='footer' collapseOnSelect expand="lg" bg="green" variant="light">
       <Container>
-        <Navbar.Brand style={{fontSize:"1em"}}> © All rights reserved to Buyables</Navbar.Brand>
+      
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -32,9 +39,9 @@ function Footer() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
 
-    </div>
+    </footer>
   )
 }
 
