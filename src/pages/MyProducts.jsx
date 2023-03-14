@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import productService from "../services/product.service";
 import { AuthContext } from "../context/auth.context";
+import { Link } from 'react-router-dom'
 
 function MyProducts() {
   const [myProducts, setMyProducts] = useState([]);
@@ -26,7 +27,7 @@ function MyProducts() {
 
   return (
     <section>
-      <h1>Products</h1>
+      <h1>My Products</h1>
       {myProducts &&
         myProducts.map((product) => {
           return (
