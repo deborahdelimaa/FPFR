@@ -2,40 +2,39 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import productService from '../services/product.service';
 import Card from 'react-bootstrap/Card';
-import { Link, useParams } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
+import { Link, useParams } from 'react-router-dom';
+import { AuthContext } from '../context/auth.context';
 
 function ShoppingCart() {
-
   const [product, setProduct] = useState([]);
   const [searchProducts, setSearchProducts] = useState([]);
   const [category, setCategory] = useState('');
   const [condition, setCondition] = useState('');
   const [search, setSearch] = useState('');
 
-  const getAllBoughtProducts = async () => {
-    try {
-      const response = await productService.getAllBoughtProducts();
-      console.log(response.data);
-      setProduct(response.data);      
-    } catch (error) {
-      console.log(error);
-    }
+  const { user } = useContext(AuthContext);
+
+  const getProduct = async () => {
+    const response = await axios.get(
+      `${import.meta.env.VITE_API_URL}/auth/user/${user._id}`
+    );
+    console.log(response.data);
+    setProduct(response.data.boughtProduct);
   };
 
   useEffect(() => {
-    getAllBoughtProducts();
-  }, []);
+    getProduct();
+  }, [user]);
 
   return (
     <div>
-    <h1>ShoppingCart</h1>
+      <h1>ShoppingCart</h1>
 
-    {searchProducts.length &&
-        searchProducts.map((product) => {
+      {product.length > 0 &&
+        product.map((product) => {
           return (
-        <>
-        <Card className='product-card'>
+            <>
+              <Card className="product-card">
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Body>
                   <Card.Img
@@ -57,11 +56,11 @@ function ShoppingCart() {
                   </Card.Text>
                 </Card.Body>
               </Card>
-        </>
-      )})}
-      
+            </>
+          );
+        })}
     </div>
-  )
+  );
 }
 
-export default ShoppingCart
+export default ShoppingCart;

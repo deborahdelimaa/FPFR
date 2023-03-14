@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
-import { Link, useParams } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
-import Card from "react-bootstrap/Card";
+import React, { useState, useEffect, useContext } from 'react';
+import axios from 'axios';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/auth.context';
+import Card from 'react-bootstrap/Card';
 
 function ProductsDetails() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
   const { user, loading } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const getProduct = async () => {
     try {
@@ -19,6 +20,14 @@ function ProductsDetails() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const buyProduct = async () => {
+    const response = await axios.get(
+      `${import.meta.env.VITE_API_URL}/api/buy/${user._id}/${id}`
+    );
+    console.log(response.data);
+  navigate('/products/bought'); 
   };
 
   useEffect(() => {
@@ -49,13 +58,17 @@ function ProductsDetails() {
                 <br />
                 Seller: {product.seller && product.seller.name}
                 <hr />
-                Reviews: 
+                Reviews:
                 {product.feedback.map((review) => {
                   return <p>{review.comment[0]}</p>;
                 })}
               </Card.Text>
             </Card.Body>
-            <button className="submit" type="submit">
+            <button
+              className="submit"
+              type="submit"
+              onClick={() => buyProduct()}
+            >
               Buy Product
             </button>
             {product && <Link to={`/review/${product._id}`}>Add a review</Link>}
