@@ -49,12 +49,13 @@ function AddProduct() {
         <input required="true" className="main-input" type="text" name="description" id="description" value={description} onChange={handleDescription} placeholder="Description" />
         <br />
         <input required="true" className="main-input" type="text" name="price" id="price" value={price} onChange={handlePrice} placeholder="Price" />
+        <br />
         <select required="true" className="main-input" name="category" id="category" onChange={handleCategory} value={category}>
           {categories.map((filters) => {
             return <option value={filters}>{filters}</option>;
           })}
         </select>
-        
+        <br />
         <select required="true" className="main-input" name="condition" id="condition" onChange={handleCondition} value={condition}>
           {conditions.map((filters) => {
             return <option value={filters}>{filters}</option>;
