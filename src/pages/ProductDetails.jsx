@@ -51,6 +51,7 @@ function ProductsDetails() {
                   </Card.Text>
                 </Card.Body>
                <button className="submit" type="submit">Buy Product</button>
+               {product && <Link to="/review/create">Add a review</Link>}
               </Card>
         </>
       )}
