@@ -38,6 +38,7 @@ function ProductsDetails() {
     <div>
       {product && (
         <>
+        <br />
           <Card className="product-card">
             <Card.Title>{product.name}</Card.Title>
             <Card.Body>
@@ -71,7 +72,7 @@ function ProductsDetails() {
             >
               Buy Product
             </button>
-            {product && <Link to={`/review/${product._id}`}>Add a review</Link>}
+            {product && <button className='submit' style={{backgroundColor:"#3FB8C3"}}> <Link  className='review-button' to={`/review/${product._id}`}>Add a review</Link></button>}
           </Card>
         </>
       )}

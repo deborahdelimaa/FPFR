@@ -55,3 +55,8 @@ input {
   position: absolute;
   bottom: 0;
 }
+
+.review-button{
+  text-decoration: none;
+  color:#22577A
+}
