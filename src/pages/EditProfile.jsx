@@ -48,7 +48,7 @@ function EditProfile() {
       const deleteProfile = async () => {
         try {
             await axios.delete(`${import.meta.env.VITE_API_URL}/auth/user/${id}`)
-            navigate("/")
+            navigate("/intro")
         } catch (error) {
             console.log(error)
             

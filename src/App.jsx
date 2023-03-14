@@ -14,6 +14,7 @@ import ShoppingCart from "./pages/ShoppingCart";
 import MyProducts from "./pages/MyProducts";
 import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
+import Introduction from "./pages/Introduction";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/myProducts" element={<MyProducts />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit/:id" element={<EditProfile />} />
+          <Route path="/intro" element={<Introduction/>}/>
         </Routes>
       </div>
     </div>
