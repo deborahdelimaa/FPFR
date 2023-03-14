@@ -16,6 +16,7 @@ import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import Introduction from "./pages/Introduction";
 import AddReview from "./pages/AddReview";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -47,7 +48,9 @@ function App() {
           <Route path="/review/:id" element={<AddReview/>} />
         </Routes>
       </div>
+      <Footer/>
     </div>
+   
   );
 }
 
