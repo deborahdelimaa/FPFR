@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-import Card from 'react-bootstrap/Card';
+import Card from "react-bootstrap/Card";
 
 function ProductsDetails() {
   const [product, setProduct] = useState(null);
@@ -29,33 +29,39 @@ function ProductsDetails() {
     <div>
       {product && (
         <>
-        <Card className='product-card'>
-                <Card.Title>{product.name}</Card.Title>
-                <Card.Body>
-                  <Card.Img
-                    variant="left"
-                    src={product.img}
-                    alt="product img"
-                    className="allProductsImg"
-                  />
-                  <Card.Text>
-                    Category: {product.category}
-                    <br />
-                    Condition: {product.condition}
-                    <br />
-                    Price: {product.price} €
-                    <br />
-                    Description: {product.description}
-                    <br />
-                    Seller: {product.seller && product.seller.name}
-                  </Card.Text>
-                </Card.Body>
-               <button className="submit" type="submit">Buy Product</button>
-               {product && <Link to="/review/create">Add a review</Link>}
-              </Card>
+          <Card className="product-card">
+            <Card.Title>{product.name}</Card.Title>
+            <Card.Body>
+              <Card.Img
+                variant="left"
+                src={product.img}
+                alt="product img"
+                className="allProductsImg"
+              />
+              <Card.Text>
+                Category: {product.category}
+                <br />
+                Condition: {product.condition}
+                <br />
+                Price: {product.price} €
+                <br />
+                Description: {product.description}
+                <br />
+                Seller: {product.seller && product.seller.name}
+                <hr />
+                Reviews: 
+                {product.feedback.map((review) => {
+                  return <p>{review.comment[0]}</p>;
+                })}
+              </Card.Text>
+            </Card.Body>
+            <button className="submit" type="submit">
+              Buy Product
+            </button>
+            {product && <Link to={`/review/${product._id}`}>Add a review</Link>}
+          </Card>
         </>
       )}
-      
     </div>
   );
 }

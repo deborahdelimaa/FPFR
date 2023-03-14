@@ -31,8 +31,8 @@ return config;
   
   //create a product 
   //body refers to the object with title and description
-  createReview = (body) => {
-  return this.api.post("/api/review", body)
+  createReview = (body, id) => {
+  return this.api.post(`/api/review/${id}`, body)
   }
 
   getSingleReview = (id) =>{
