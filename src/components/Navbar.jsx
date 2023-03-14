@@ -5,6 +5,7 @@ import "../navbar.css";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
+import Buyable from '../images/Buyable3.png'
 
 
 
@@ -15,7 +16,7 @@ function Navigationbar() {
     <div></div>
     <Navbar style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} variant="dark">
     <Container>
-    <Navbar.Brand href="/">Buyable</Navbar.Brand>
+    <Navbar.Brand href="/"><img className='navlogo' src={Buyable} alt="" /></Navbar.Brand>
           <Nav className="me-auto">
     {loggedIn ? (
         <>

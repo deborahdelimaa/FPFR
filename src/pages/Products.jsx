@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+
 function Products() {
   const [products, setProducts] = useState([]);
   const [searchProducts, setSearchProducts] = useState([]);
@@ -75,6 +76,7 @@ function Products() {
   return (
     <section>
       <h1>Products</h1>
+      
       <Searchbar
         setCategory={setCategory}
         setCondition={setCondition}
