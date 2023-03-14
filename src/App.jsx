@@ -44,7 +44,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit/:id" element={<EditProfile />} />
           <Route path="/intro" element={<Introduction/>}/>
-          <Route path="/review/create" element={<AddReview/>} />
+          <Route path="/review/:id" element={<AddReview/>} />
         </Routes>
       </div>
     </div>
