@@ -74,12 +74,12 @@ function Products() {
   return (
     <section>
       <h1>Products</h1>
-      
+      <div className='searchbar-div'>
       <Searchbar
         setCategory={setCategory}
         setCondition={setCondition}
         setSearch={setSearch}
-      />
+      /></div>
       {searchProducts.length &&
         searchProducts.map((product) => {
           return (
@@ -110,7 +110,9 @@ function Products() {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              <br />
             </Link>
+            
           );
         })}
     </section>

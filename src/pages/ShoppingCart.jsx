@@ -34,6 +34,7 @@ function ShoppingCart() {
         product.map((product) => {
           return (
             <>
+            <br />
               <Card className="product-card">
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Body>
@@ -56,6 +57,7 @@ function ShoppingCart() {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              <br />
             </>
           );
         })}
