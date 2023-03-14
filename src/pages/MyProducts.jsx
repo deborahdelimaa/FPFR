@@ -27,19 +27,24 @@ function MyProducts() {
   return (
     <section>
       <h1>My Products</h1>
+      <br/>
       {myProducts.length > 0 &&
         myProducts.map((product) => {
           return (
-            <Card style={{ width: '18rem' }}>
+            
+            <Card style={{ width: '18rem', marginLeft:"3vw", marginBottom:"3vw" }} >
               <Card.Img variant="top" src={product.img} />
               <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>{product.description}</Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+              
               </Card.Body>
             </Card>
+            
+            
           );
         })}
+        
     </section>
   );
 }

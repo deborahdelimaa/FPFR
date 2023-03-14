@@ -34,9 +34,9 @@ function Profile() {
         </>
       )}
       {profile && (
-        <Link to={`/profile/edit/${profile._id}`} key={profile._id}>
+        <button className="button-one" style={{}}><Link to={`/profile/edit/${profile._id}`} key={profile._id}>
           Edit profile
-        </Link>
+        </Link> </button>
       )}
     </div>
   );
