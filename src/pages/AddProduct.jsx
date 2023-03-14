@@ -2,11 +2,11 @@ import React, { useState, useContext} from 'react';
 import { useNavigate} from 'react-router-dom';
 import ProductService from '../services/product.service';
 import { AuthContext } from '../context/auth.context';
-import { useParams } from 'react-router-dom';
+
 
 function AddProduct() {
   const {user} = useContext(AuthContext)
-  const {id} =  useParams()
+
 
   const [img, setImg] = useState('')
   const [name, setName] = useState('');
@@ -14,7 +14,6 @@ function AddProduct() {
   const [category, setCategory] = useState('Other');
   const [condition, setCondition] = useState('Used');
   const [description, setDescription] = useState('');
-/*   const [seller, setSeller] = useState(user._id);  */
 
   const categories = ['Other', 'Vehicles', 'Technology', 'Furniture', 'Sport', 'Animals'];
   const conditions = ['Used', 'New']
@@ -26,13 +25,13 @@ function AddProduct() {
   const handleCategory = (e) => setCategory(e.target.value);
   const handleCondition = (e) => setCondition(e.target.value);
   const handleDescription = (e) => setDescription(e.target.value);
-  const handleSeller = (e) => setSeller(e.target.value);
+  
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const body = { name, price, category, condition, description, seller };
+    const body = { name, price, category, condition, description, seller:user._id };
     try {
       await ProductService.createProduct(body);
       navigate('/products');
@@ -61,10 +60,6 @@ function AddProduct() {
             return <option value={filters}>{filters}</option>;
           })}
         </select>
-        
-       
-        {/* <input required="true" className="main-input" type="text" name="seller" id="seller" value={seller} onChange={handleSeller} />
-        <br /> */}
         <input className="main-input" type="file" name='img' id='img' value={img} onChange={img} placeholder="Add Image" />    
         <button style={{marginRight:"0.5vw"}}required="true" className="submit" type="submit">Create Product</button>
       </form>

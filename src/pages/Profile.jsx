@@ -4,8 +4,8 @@ import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 
 function Profile() {
-  const [profile, setProfile] = useState([]);
-  const { user } = useContext(AuthContext);
+  const [profile, setProfile] = useState(null);
+  const { user, loading } = useContext(AuthContext);
 
   const getProfile = async () => {
     try {
@@ -21,7 +21,7 @@ function Profile() {
 
   useEffect(() => {
     getProfile();
-  }, []);
+  }, [loading]);
 
   return (
     <div>
