@@ -75,9 +75,6 @@ function Products() {
   return (
     <section>
       <h1>Products</h1>
-      <p>
-        cond: {condition} cat: {category} search: {search}
-      </p>
       <Searchbar
         setCategory={setCategory}
         setCondition={setCondition}
