@@ -90,7 +90,7 @@ function Products() {
               to={`/products/${product._id}`}
               key={product._id}
             >
-              <Card>
+              <Card className='product-card'>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Body>
                   <Card.Img
