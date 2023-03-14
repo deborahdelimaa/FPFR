@@ -15,6 +15,7 @@ import MyProducts from "./pages/MyProducts";
 import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import Introduction from "./pages/Introduction";
+import AddReview from "./pages/AddReview";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit/:id" element={<EditProfile />} />
           <Route path="/intro" element={<Introduction/>}/>
+          <Route path="/review/create" element={<AddReview/>} />
         </Routes>
       </div>
     </div>
