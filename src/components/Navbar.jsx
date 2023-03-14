@@ -37,7 +37,7 @@ function Navigationbar() {
     ): (
         <>
         
-        <Nav.Link style={{marginLeft:"75vw"}} href="/signup">Signup</Nav.Link>
+        <Nav.Link style={{marginLeft:"70vw"}} href="/signup">Signup</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
             
             
