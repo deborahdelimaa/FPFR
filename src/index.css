@@ -18,4 +18,36 @@ h1{
  margin-bottom: 3vh;
 }
 
+#category {
+  background-color: rgba(255, 255, 255, 0.454);
+  border-style: none;
+  height: 26px;
+  margin-left: 5px;
+  color: #22577a;
+}
+select {
+  background-color: rgba(255, 255, 255, 0.454);
+  border-style: none;
+}
+
+#condition {
+  background-color:rgba(255, 255, 255, 0.454);
+  height: 26px;
+  margin-left: 5px;
+  color: #22577a;
+}
+
+#search {
+  background-color: rgba(255, 255, 255, 0.454);
+  margin-left: 5px;
+  color: #22577a;
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.454);
+  border-style: none;
+  appearance: auto;
+  
+}
+
 

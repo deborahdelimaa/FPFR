@@ -80,7 +80,7 @@ function Products() {
         setCondition={setCondition}
         setSearch={setSearch}
       /></div>
-      {searchProducts.length &&
+      {searchProducts.length > 0 &&
         searchProducts.map((product) => {
           return (
             <Link

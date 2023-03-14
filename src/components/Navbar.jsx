@@ -23,7 +23,7 @@ function Navigationbar() {
     {loggedIn ? (
         <>
 
-        <NavDropdown style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} title="" id="basic-nav-dropdown">
+        <NavDropdown style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} title={user.name} id="basic-nav-dropdown">
           <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products">Products</NavDropdown.Item>
           <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/myproducts">MyProducts</NavDropdown.Item>
           <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products/new">Sell</NavDropdown.Item>            
