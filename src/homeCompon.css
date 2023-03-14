@@ -19,3 +19,8 @@
   padding: 40px;
   font-weight: 500;
 }
+
+
+.imgHover{
+  background-color: rgba(0, 0, 0, 0.409);
+}

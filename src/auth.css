@@ -45,7 +45,7 @@ body {
 }
 
 .form {
-    margin-top: 20vh;
+    margin-top: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,7 +67,7 @@ body {
   background-color: rgba(255, 255, 255, 0.454);
   border-radius: 20px;
   position: relative;
-  width: 17vw;
+  width: 20vw;
 }
 
 .form p {
@@ -146,6 +146,7 @@ body {
 .submit {
   margin-top: 1.2rem;
   padding: 10px 20px;
+  border: 0px;
   border-radius: 10px;
   background-color: #2ee394;
   color: #22577a;
@@ -153,7 +154,7 @@ body {
 
 .link {
   text-decoration:none;
-  color: black;
+  color: #22577A;
 }
 
 .link:hover {
@@ -169,4 +170,22 @@ body {
 
 .auth-paragraph{
     color:white;
+}
+
+.delete-button{
+  border: 3px solid red;
+  border-radius: 10%;
+  background-color: red;
+  color: white;
+  width: 7vw;
+  height: 7vh;
+  margin-left: 46.5vw;
+  position:fixed;
+  margin-top: -60px;
+}
+
+.delete-button:hover{
+  color: rgb(255, 0, 0);
+  background-color: rgb(144, 3, 3); 
+  border:5px solid rgb(144, 3, 3);
 }
