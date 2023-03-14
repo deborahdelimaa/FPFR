@@ -4,10 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import productService from '../services/product.service';
 import Searchbar from '../components/Searchbar';
-import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 
 
 function Products() {

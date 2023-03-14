@@ -38,6 +38,9 @@ return config;
   getSingleProduct = (id) =>{
     return this.api.get(`/api/products/${id}`)
   }
+
+  getAllBoughtProducts = () => {
+    return this.api.get("/bought-product-list")
 }
 
 
