@@ -11,6 +11,7 @@ import Buyable from '../images/Buyable3.png'
 
 
 function Navigationbar() {
+    
     const {loggedIn, user, logout}= useContext(AuthContext)
   return (
     <div >
@@ -22,18 +23,12 @@ function Navigationbar() {
     {loggedIn ? (
         <>
 
-        <NavDropdown style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products">Products</NavDropdown.Item>
-              <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/myproducts">MyProducts</NavDropdown.Item>
-              <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products/new">Sell</NavDropdown.Item>            
-              <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/profile">Profile</NavDropdown.Item>
-            </NavDropdown>
-
-        {/* <Nav.Link  href="/products">Products</Nav.Link>
-        <Nav.Link  href="/myproducts">MyProducts</Nav.Link>
-            <Nav.Link  href="/products/new">Sell</Nav.Link>
-            <Nav.Link  href="/profile">Profile</Nav.Link>
-             */}
+        <NavDropdown style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} title="" id="basic-nav-dropdown">
+          <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products">Products</NavDropdown.Item>
+          <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/myproducts">MyProducts</NavDropdown.Item>
+          <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products/new">Sell</NavDropdown.Item>            
+          <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/profile">Profile</NavDropdown.Item>
+          </NavDropdown>
             <div className='flex-nav'>
             
             <button  onClick={logout} className="cta">
