@@ -43,18 +43,7 @@ function HomeCompo() {
     </Card>
     </Link>
     </div>
-    <div>
-    <Link to="/reviews">
-    <Card className="bg-white text-black">
-      <Card.Img src={Reviews} alt="Card image" />
-      <Card.ImgOverlay className="imgHover">
-        <Card.Title className="title">Reviews</Card.Title>
-        
-      
-      </Card.ImgOverlay>
-    </Card>
-    </Link>
-    </div>
+   
     </div>
   )
 }
