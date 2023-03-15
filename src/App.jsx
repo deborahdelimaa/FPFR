@@ -48,7 +48,7 @@ function App() {
           <Route path="/review/:id" element={<AddReview/>} />
         </Routes>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
    
   );
