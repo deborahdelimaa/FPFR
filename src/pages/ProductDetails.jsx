@@ -72,11 +72,7 @@ function ProductsDetails() {
                 Description: {product.description}
                 <br />
                 Seller: {product.seller && product.seller.name}
-                <hr />
-                Reviews:
-                {product.feedback.map((review) => {
-                  return <p>{review.comment[0]}</p>;
-                })}
+                
               </Card.Text>
             </Card.Body>
             <button
@@ -92,6 +88,23 @@ function ProductsDetails() {
               onClick={() => addFavorite()}
             >Add to Favorites</button>
             {product && <button className='submit' style={{backgroundColor:"#3FB8C3"}}> <Link  className='review-button' to={`/review/${product._id}`}>Add a review</Link></button>}
+          </Card>
+          <br />
+
+          <Card className="product-card">
+            <h4 style={{width:"70vw", margin:"auto", color:"#22577a"}}>Reviews:</h4>
+                <br />
+               
+                {product.feedback.map((review) => {
+                  return <div style={{width:"70vw", margin:"auto"}}>
+                  <br />
+                 <h5> Rating: {review.rating}</h5>
+                  {review.comment[0]}
+                  <br />
+                  <br />
+                  <hr style={{width:"70vw", margin:"auto"}}/>
+                  </div>;
+                })}
           </Card>
         </>
       )}

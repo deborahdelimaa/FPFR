@@ -28,7 +28,7 @@ function AddProduct() {
 
     const uploadData = new FormData();
 
-    // imageUrl => this name has to be the same as in the model since we pass
+     // imageUrl => this name has to be the same as in the model since we pass
     // req.body to .create() method when creating a new movie in '/api/movies' POST route
     uploadData.append("img", e.target.files[0]);
 

@@ -72,8 +72,8 @@ function Products() {
   }, [search]);
 
   return (
-    <section>
-      <h1>Products</h1>
+    <section> 
+    <br />     
       <div className='searchbar-div'>
       <Searchbar
         setCategory={setCategory}
@@ -88,29 +88,34 @@ function Products() {
               to={`/products/${product._id}`}
               key={product._id}
             >
-              <Card className='product-card'>
-                <Card.Title>{product.name}</Card.Title>
-                <Card.Body>
-                  <Card.Img
-                    variant="left"
-                    src={product.img}
-                    alt="product img"
-                    className="allProductsImg"
-                  />
-                  <Card.Text>
-                    Category: {product.category}
-                    <br />
-                    Condition: {product.condition}
-                    <br />
-                    Price: {product.price} €
-                    <br />
-                    Description: {product.description}
-                    <br />
-                    Seller: {product.seller && product.seller.name}
-                  </Card.Text>
-                </Card.Body>
+              <Card className='product-card'
+              style={{ display: "flex", 
+              flexDirection: "row", 
+              flexWrap:"nowrap", 
+              alignItems: "stretch", 
+              alignContent: "stretch"}}>
+              
+              <div className="image" style={{ marginright: "0 vw"}}>
+              <Card.Img
+                variant="left"
+                src={product.img}
+                alt="product img"
+                className="allProductsImg"
+              />
+              </div>
+              <div className="productInfo">
+              <Card.Title> <h3>{product.name}</h3><h6>Price: {product.price} €</h6></Card.Title>
+              <Card.Body>
+                <Card.Text>             
+                  <p>Condition: {product.condition}</p>
+                  <p>Category: {product.category}</p>
+                  <p>Description: {product.description}</p>
+                  <p>Seller: {product.seller && product.seller.name}</p>
+                </Card.Text>
+              </Card.Body>
+              </div>
               </Card>
-              <br />
+              <br />              
             </Link>
             
           );

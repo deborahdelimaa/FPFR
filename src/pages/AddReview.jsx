@@ -4,6 +4,15 @@ import ReviewService from "../services/review.service";
 import { AuthContext } from "../context/auth.context";
 
 function AddReview() {
+
+  const ratings = [
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+  ];
   const { user } = useContext(AuthContext);
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState("");
@@ -43,7 +52,18 @@ function AddReview() {
           onChange={handleComment}
           placeholder="Your review here"
         />
-        <input type="number" name="rating" onChange={handleRating} />
+        {/* <input type="number" name="rating" onChange={handleRating} /> */}
+        <br />
+        <select
+          required="true"
+          name="rating"
+          id="rating"
+          onChange={handleRating}
+        >
+          {ratings.map((filters) => {
+            return <option value={filters}>{filters}</option>;
+          })}
+        </select>
 
         <button
           style={{ marginRight: "0.5vw" }}
