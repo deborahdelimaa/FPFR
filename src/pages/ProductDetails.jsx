@@ -34,6 +34,20 @@ function ProductsDetails() {
     getProduct();
   }, [id]);
 
+  const addFavorite = async () => {
+    const response = await axios.get(
+      `${import.meta.env.VITE_API_URL}/api/favorites/${user._id}/${id}`
+    );
+    console.log(response.data);
+      navigate("/favorites");
+    
+    }
+  
+
+  useEffect(() => {
+    getProduct();
+  }, [id]);
+
   return (
     <div>
       {product && (
@@ -72,6 +86,11 @@ function ProductsDetails() {
             >
               Buy Product
             </button>
+            <button
+              className="submit"
+              type="submit"
+              onClick={() => addFavorite()}
+            >Add to Favorites</button>
             {product && <button className='submit' style={{backgroundColor:"#3FB8C3"}}> <Link  className='review-button' to={`/review/${product._id}`}>Add a review</Link></button>}
           </Card>
         </>

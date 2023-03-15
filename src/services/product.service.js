@@ -27,9 +27,6 @@ class ProductService {
     return this.api.get('/api/products');
     //this is the same as axios.get(`${import.meta.env.VITE_API_URL}/api/projects`)
   };
-
-
-
   //create a product
   //body refers to the object with title and description
   createProduct = (body) => {
@@ -46,6 +43,20 @@ class ProductService {
 
   getSingleBoughtProduct = (id) => {
     return this.api.get(`/api/products/bought/${id}`);
+  };
+
+
+  getAllFavorite = () => {
+    return this.api.get(`/api/favorites`);
+  };
+
+  updateImage = (file) => {
+    return this.api.post("/api/upload", file)
+  }
+
+  addFavorite = (userId, favoriteId) => {
+    console.log(favoriteId);
+    return this.api.get(`/api/favorites/${userId}/${favoriteId}`);
   };
 }
 

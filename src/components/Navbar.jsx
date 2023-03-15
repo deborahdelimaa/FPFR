@@ -26,7 +26,8 @@ function Navigationbar() {
         <NavDropdown style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} title={user.name} id="basic-nav-dropdown">
           <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products">Products</NavDropdown.Item>
           <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/myproducts">MyProducts</NavDropdown.Item>
-          <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products/new">Sell</NavDropdown.Item>            
+          <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/products/new">Sell</NavDropdown.Item>  
+          <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/favorites">Favorites</NavDropdown.Item>            
           <NavDropdown.Item style={{backgroundColor:"#3FB8C3", color:"#D0EBD7"}} href="/profile">Profile</NavDropdown.Item>
           </NavDropdown>
             <div className='flex-nav'>
