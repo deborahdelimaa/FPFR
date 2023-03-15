@@ -9,7 +9,7 @@ function EditProduct() {
 
   const {user} = useContext(AuthContext)
 
-  const [img, setImg] = useState('')
+  
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState('Other');
@@ -19,7 +19,7 @@ function EditProduct() {
   const categories = ['Other', 'Vehicles', 'Technology', 'Furniture', 'Sport', 'Animals'];
   const conditions = ['Used', 'New']
     
-  const handleImg = (e) => setImg(e.target.value);
+ 
   const handleName = (e) => setName(e.target.value);
   const handlePrice = (e) => setPrice(e.target.value);
   const handleCategory = (e) => setCategory(e.target.value);
@@ -35,7 +35,12 @@ function EditProduct() {
         const body = { name, price, category, condition, description, seller:user._id }
         try {
             await axios.put(`${import.meta.env.VITE_API_URL}/api/products/${id}`, body)
-            navigate(`/products/${id}`)
+            setName("")
+            setPrice("")
+            setCategory("")
+            setCondition("")
+            setDescription("")
+            navigate(`/myProducts`)
             
         } catch (error) {
             console.log(error)
@@ -48,7 +53,7 @@ function EditProduct() {
             `${import.meta.env.VITE_API_URL}/api/products/${id}`
         );
           console.log(response.data);
-          setImg(response.data.img)
+         
           setName(response.data.name)
           setPrice(response.data.price)
           setCategory(response.data.category)
@@ -79,25 +84,25 @@ function EditProduct() {
   return (
     <section>
 <h1>Edit product:</h1>
-<form onSubmit={handleSubmit}>
-<input required="true" className="main-input" type="text" name="name" id="name" value={name} onChange={handleName} placeholder="Name" />
+<form onSubmit={handleSubmit} className="form">
+<input required="true" className="main-input" type="text" name="name" id="name" value={name} onChange={handleName}  />
         <br />
         <input required="true" className="main-input" type="text" name="description" id="description" value={description} onChange={handleDescription} placeholder="Description" />
         <br />
         <input required="true" className="main-input" type="text" name="price" id="price" value={price} onChange={handlePrice} placeholder="Price" />
         <br />
-        <select required="true" className="main-input" name="category" id="category" onChange={handleCategory} value={category}>
+        <select style={{height:"6vh"}} required="true" className="main-input" name="category" id="category" onChange={handleCategory} value={category}>
           {categories.map((filters) => {
             return <option value={filters}>{filters}</option>;
           })}
         </select>
         <br />
-        <select required="true" className="main-input" name="condition" id="condition" onChange={handleCondition} value={condition}>
+        <select style={{height:"6vh"}} required="true" className="main-input" name="condition" id="condition" onChange={handleCondition} value={condition}>
           {conditions.map((filters) => {
             return <option value={filters}>{filters}</option>;
           })}
         </select>
-        <input className="main-input" type="file" name='img' id='img' value={img} onChange={img} placeholder="Add Image" />    
+   
         <button style={{marginRight:"0.5vw"}} className="submit" type="submit">Edit Product</button>
 </form>
 

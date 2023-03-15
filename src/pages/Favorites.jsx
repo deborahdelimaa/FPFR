@@ -7,7 +7,7 @@ import { AuthContext } from '../context/auth.context';
 
 function Favorites() {
   const [product, setProduct] = useState([]);
-  const [searchProducts, setSearchProducts] = useState([]);
+  const [searchProducts, setSearchProducts] = useState(null);
   const [category, setCategory] = useState('');
   const [condition, setCondition] = useState('');
   const [search, setSearch] = useState('');
@@ -15,12 +15,15 @@ function Favorites() {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
   
+  const storedToken = localStorage.getItem("authToken");
+console.log(searchProducts)
 
   const addFavorite = async () => {
     const response = await axios.get(
       `${import.meta.env.VITE_API_URL}/auth/user/${user._id}`
     );
     console.log(response.data);
+    setSearchProducts(response.data.favorite)
     setProduct(response.data.favorite);
   };
 
@@ -32,7 +35,12 @@ function Favorites() {
 
   const deleteFavorite = async () => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/api/favorites/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/favorites/${searchProducts._id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${storedToken}`,
+        },
+      });
 
     } catch (error) {
       console.log(error);

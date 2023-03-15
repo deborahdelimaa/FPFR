@@ -48,8 +48,8 @@ function App() {
           <Route path="/intro" element={<Introduction/>}/>
           <Route path="/review/:id" element={<AddReview/>} />
           <Route path="/favorites" element={<Favorites/>} />
-          <Route path="/favorites/:id" element={<Favorites/>} />
-        </Routes>
+{/*           <Route path="/favorites/:id" element={<Favorites/>} />
+ */}        </Routes>
       </div>
       {/* <Footer/> */}
     </div>
