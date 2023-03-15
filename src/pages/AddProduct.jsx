@@ -64,6 +64,12 @@ function AddProduct() {
     };
     try {
       await ProductService.createProduct(body);
+      setImg("")
+      setPrice("")
+      setCategory("")
+      setCondition("")
+      setDescription("")
+      
       navigate("/products");
     } catch (error) {
       console.log(error);

@@ -49,7 +49,7 @@ function HomeCompo() {
     <Card className="bg-white text-black">
       <Card.Img src={favorites} alt="Card image" />
       <Card.ImgOverlay className="imgHover">
-        <Card.Title className="title">Shopping Cart</Card.Title>
+        <Card.Title className="title">Favorites</Card.Title>
         
       </Card.ImgOverlay>
     </Card>

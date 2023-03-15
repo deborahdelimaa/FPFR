@@ -13,6 +13,7 @@ function Favorites() {
   const [search, setSearch] = useState('');
 
   const { user } = useContext(AuthContext);
+  const { id } = useParams();
   
 
   const addFavorite = async () => {
@@ -27,9 +28,11 @@ function Favorites() {
     addFavorite();
   }, [user]);
 
+
+
   const deleteFavorite = async () => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/api/favorites/${favorite._id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/favorites/${id}`);
 
     } catch (error) {
       console.log(error);
@@ -71,7 +74,7 @@ function Favorites() {
                     Description: {product.description}
                     <br />
                     Seller: {product.seller && product.seller.name}
-                    <button className="delete-button" onClick={deleteFavorite}></button>
+                    <button  onClick={deleteFavorite}>delete</button>
                   </Card.Text>
                   
                 </Card.Body>

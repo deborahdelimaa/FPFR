@@ -46,6 +46,7 @@ function EditProfile() {
       setName("");
       setContact("");
       
+      
 
       navigate(`/profile`);
     } catch (error) {
@@ -107,7 +108,7 @@ function EditProfile() {
               
               className="main-input"
               type="contact"
-              value={contact}
+              
               onChange={handleContact}
             />
             <span className="highlight-span"></span>
