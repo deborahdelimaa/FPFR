@@ -17,6 +17,7 @@ import EditProfile from "./pages/EditProfile";
 import Introduction from "./pages/Introduction";
 import AddReview from "./pages/AddReview";
 import Footer from "./components/Footer";
+import Favorites from "./pages/Favorites";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/profile/edit/:id" element={<EditProfile />} />
           <Route path="/intro" element={<Introduction/>}/>
           <Route path="/review/:id" element={<AddReview/>} />
+          <Route path="/favorites" element={<Favorites/>} />
         </Routes>
       </div>
       {/* <Footer/> */}
