@@ -104,7 +104,7 @@ function EditProfile() {
         <div className="container-1">
           <div className="group">
             <input
-              required="true"
+              
               className="main-input"
               type="contact"
               value={contact}

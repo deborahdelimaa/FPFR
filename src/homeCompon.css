@@ -16,13 +16,21 @@
 
 .title {
   text-align: center;
-  padding: 40px;
-  font-weight: 500;
+  padding: 20px;
+  font-weight: 900;
+  text-shadow:1px 1px #ffffff;
+  font-size: 5rem;
+  
 }
 
 
 .imgHover:hover{
   background-color: rgba(0, 0, 0, 0.247);
-  color:white;
+  color:#ffffff;
+  text-shadow:none;
   
+}
+.title:hover{
+  color:#ffffff;
+  text-shadow:none
 }

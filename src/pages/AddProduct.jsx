@@ -111,7 +111,7 @@ function AddProduct() {
           placeholder="Price"
         />
         <br />
-        <select
+        <select style={{height:"6vh"}}
           required="true"
           className="main-input"
           name="category"
@@ -124,7 +124,7 @@ function AddProduct() {
           })}
         </select>
         <br />
-        <select
+        <select style={{height:"6vh"}}
           required="true"
           className="main-input"
           name="condition"
@@ -136,16 +136,16 @@ function AddProduct() {
             return <option value={filters}>{filters}</option>;
           })}
         </select>
+        <br />
         <input
           className="main-input"
           type="file"
           name="img"
           id="img"
           onChange={(e) => handleFileUpload(e)}
-          placeholder="Add Image"
+          
         />
         <button
-          style={{ marginRight: "0.5vw" }}
           required="true"
           className="submit"
           type="submit"
