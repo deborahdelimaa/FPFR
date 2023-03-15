@@ -5,8 +5,8 @@ import { AuthContext } from '../context/auth.context';
 
 
 function AddProduct() {
+  
   const {user} = useContext(AuthContext)
-
 
   const [img, setImg] = useState('')
   const [name, setName] = useState('');

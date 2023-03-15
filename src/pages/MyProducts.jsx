@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import productService from '../services/product.service';
 import { AuthContext } from '../context/auth.context';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 function MyProducts() {
   const [myProducts, setMyProducts] = useState([]);
@@ -53,6 +54,7 @@ function MyProducts() {
                     Seller: {product.seller && product.seller.name}
                   </Card.Text>
                 </Card.Body>
+                {product && <Link to={`/products/edit/${product._id}`}>Edit product</Link>}
               </Card>
             
             
