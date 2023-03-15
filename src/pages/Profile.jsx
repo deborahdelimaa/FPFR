@@ -41,7 +41,7 @@ function Profile() {
       <Figure.Caption style={{fontSize:"2.5em", color:"white", marginLeft:"1vw"}}>
        {profile.email}
       </Figure.Caption>
-      <Figure.Caption style={{fontSize:"2.5em", color:"white"}}>
+      <Figure.Caption style={{fontSize:"2.5em", color:"white", marginLeft:"1vw"}}>
        {profile.contact}
       </Figure.Caption>
     </Figure>

@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import "../auth.css";
+import service from "../services/user.service";
+
 
 function EditProfile() {
   const [name, setName] = useState("");
@@ -12,11 +14,29 @@ function EditProfile() {
 
   const handleName = (e) => setName(e.target.value);
   const handleContact = (e) => setContact(Number(e.target.value));
-  const handleImg = (e) => setImg(e.target.value);
+ 
 
   const navigate = useNavigate();
 
   const { id } = useParams();
+
+  const handleFileUpload = (e) => {
+
+
+    const uploadData = new FormData();
+
+    
+    uploadData.append("img", e.target.files[0]);
+
+    service
+      .updateImage(uploadData)
+      .then((response) => {
+        
+      console.log(response)
+        setImg(response.data.fileUrl);
+      })
+      .catch((err) => console.log("Error while uploading the file: ", err));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +45,7 @@ function EditProfile() {
       await axios.put(`${import.meta.env.VITE_API_URL}/auth/user/${id}`, body);
       setName("");
       setContact("");
-      setImg("");
+      
 
       navigate(`/profile`);
     } catch (error) {
@@ -95,9 +115,9 @@ function EditProfile() {
           </div>
           <br />
           <div className="group">
-            <input className="main-input" type="file" onChange={handleImg} />
-            <span className="highlight-span"></span>
-            <label className="lebal-email"></label>
+            <input className="main-input" type="file" onChange={(e) => handleFileUpload(e)} />
+            
+            
           </div>
         </div>
         <button className="submit">Edit Profile</button>
