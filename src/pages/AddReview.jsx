@@ -30,7 +30,7 @@ function AddReview() {
       await ReviewService.createReview(body, id);
       setComment();
 
-      navigate("/products");
+      navigate(`/products/${id}`);
     } catch (error) {
       console.log(error);
     }
