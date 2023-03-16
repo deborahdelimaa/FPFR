@@ -43,6 +43,7 @@ function MyProducts() {
                   width: '60vw',
                   margin: 'auto',
                   borderRadius: '15px',
+                  backgroundColor:"rgba(255, 255, 255, 0.58)"
                 }}
               >
                 <Card.Img
@@ -51,9 +52,10 @@ function MyProducts() {
                   alt="product img"
                   className="allProductsImg"
                   style={{
-                    border: 'solid black 2px',
+                    border: 'solid #22577A 2px',
                     borderRadius: '15px',
                     marginLeft: '0px',
+                    marginRight:"4vw",
                     width: '25vw',
                     height: '30vh',
                   }}

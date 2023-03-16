@@ -72,7 +72,7 @@ function EditProduct() {
       setCondition(response.data.condition);
       setDescription(response.data.description);
 
-      navigate(`/products/edit/:id`);
+      navigate(`/products/edit/${id}`);
     } catch (error) {
       console.log(error);
     }
