@@ -1,21 +1,13 @@
-import React, { useState, useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import ReviewService from "../services/review.service";
-import { AuthContext } from "../context/auth.context";
+import React, { useState, useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import ReviewService from '../services/review.service';
+import { AuthContext } from '../context/auth.context';
 
 function AddReview() {
-
-  const ratings = [
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-  ];
+  const ratings = ['0', '1', '2', '3', '4', '5'];
   const { user } = useContext(AuthContext);
-  const [comment, setComment] = useState("");
-  const [rating, setRating] = useState("");
+  const [comment, setComment] = useState('');
+  const [rating, setRating] = useState('');
   const { id } = useParams();
 
   const handleComment = (e) => setComment(e.target.value);
@@ -38,7 +30,7 @@ function AddReview() {
   return (
     <section className="formdiv">
       <form
-        style={{ marginTop: "15vh", width: "30vw" }}
+        style={{ marginTop: '15vh', width: '30vw' }}
         className="form"
         onSubmit={handleSubmit}
       >
@@ -66,7 +58,7 @@ function AddReview() {
         </select>
 
         <button
-          style={{ marginRight: "0.5vw" }}
+          style={{ marginRight: '0.5vw' }}
           required="true"
           className="submit"
           type="submit"

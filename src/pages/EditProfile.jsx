@@ -1,41 +1,35 @@
-import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
-import "../auth.css";
-import service from "../services/user.service";
-
+import React, { useState, useEffect, useContext } from 'react';
+import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
+import { AuthContext } from '../context/auth.context';
+import '../auth.css';
+import service from '../services/user.service';
 
 function EditProfile() {
-  const [name, setName] = useState("");
-  const [contact, setContact] = useState("");
-  const [img, setImg] = useState("");
+  const [name, setName] = useState('');
+  const [contact, setContact] = useState('');
+  const [img, setImg] = useState('');
   const { logout } = useContext(AuthContext);
 
   const handleName = (e) => setName(e.target.value);
   const handleContact = (e) => setContact(Number(e.target.value));
- 
 
   const navigate = useNavigate();
 
   const { id } = useParams();
 
   const handleFileUpload = (e) => {
-
-
     const uploadData = new FormData();
 
-    
-    uploadData.append("img", e.target.files[0]);
+    uploadData.append('img', e.target.files[0]);
 
     service
       .updateImage(uploadData)
       .then((response) => {
-        
-      console.log(response)
+        console.log(response);
         setImg(response.data.fileUrl);
       })
-      .catch((err) => console.log("Error while uploading the file: ", err));
+      .catch((err) => console.log('Error while uploading the file: ', err));
   };
 
   const handleSubmit = async (e) => {
@@ -43,10 +37,8 @@ function EditProfile() {
     const body = { name, contact, img };
     try {
       await axios.put(`${import.meta.env.VITE_API_URL}/auth/user/${id}`, body);
-      setName("");
-      setContact("");
-      
-      
+      setName('');
+      setContact('');
 
       navigate(`/profile`);
     } catch (error) {
@@ -71,7 +63,7 @@ function EditProfile() {
   const deleteProfile = async () => {
     try {
       await axios.delete(`${import.meta.env.VITE_API_URL}/auth/user/${id}`);
-      navigate("/intro");
+      navigate('/intro');
       logout();
     } catch (error) {
       console.log(error);
@@ -85,7 +77,7 @@ function EditProfile() {
   return (
     <section>
       <form
-        style={{ marginLeft: "35vw", width: "30vw" }}
+        style={{ marginLeft: '35vw', width: '30vw' }}
         className="form"
         onSubmit={handleSubmit}
       >
@@ -105,10 +97,8 @@ function EditProfile() {
         <div className="container-1">
           <div className="group">
             <input
-              
               className="main-input"
               type="contact"
-              
               onChange={handleContact}
             />
             <span className="highlight-span"></span>
@@ -116,9 +106,11 @@ function EditProfile() {
           </div>
           <br />
           <div className="group">
-            <input className="main-input" type="file" onChange={(e) => handleFileUpload(e)} />
-            
-            
+            <input
+              className="main-input"
+              type="file"
+              onChange={(e) => handleFileUpload(e)}
+            />
           </div>
         </div>
         <button className="submit">Edit Profile</button>

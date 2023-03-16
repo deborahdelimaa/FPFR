@@ -1,6 +1,6 @@
-import { useState, useEffect, createContext } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, createContext } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -13,7 +13,7 @@ function AuthWrapper(props) {
   const navigate = useNavigate();
   const authenticateUser = async () => {
     //Check for a token
-    const storedToken = localStorage.getItem("authToken");
+    const storedToken = localStorage.getItem('authToken');
 
     //if the token exists
 
@@ -45,10 +45,10 @@ function AuthWrapper(props) {
 
   const logout = () => {
     //Remove the token
-    localStorage.removeItem("authToken");
+    localStorage.removeItem('authToken');
     // Try to authenticate the user but it will fail bc we logged out
     authenticateUser();
-    navigate("/intro");
+    navigate('/intro');
   };
 
   useEffect(() => {

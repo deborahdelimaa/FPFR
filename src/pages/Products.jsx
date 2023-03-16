@@ -6,7 +6,6 @@ import productService from '../services/product.service';
 import Searchbar from '../components/Searchbar';
 import Card from 'react-bootstrap/Card';
 
-
 function Products() {
   const [products, setProducts] = useState([]);
   const [searchProducts, setSearchProducts] = useState([]);
@@ -72,14 +71,18 @@ function Products() {
   }, [search]);
 
   return (
-    <section> 
-    <br />     
-      <div className='searchbar-div'>
-      <Searchbar
-        setCategory={setCategory}
-        setCondition={setCondition}
-        setSearch={setSearch}
-      /></div>
+    <section>
+      <br />
+      <div
+        className="searchbar-div"
+        style={{ marginLeft: '20vw', width: '40vw' }}
+      >
+        <Searchbar
+          setCategory={setCategory}
+          setCondition={setCondition}
+          setSearch={setSearch}
+        />
+      </div>
       {searchProducts.length > 0 &&
         searchProducts.map((product) => {
           return (
@@ -88,36 +91,52 @@ function Products() {
               to={`/products/${product._id}`}
               key={product._id}
             >
-              <Card className='product-card'
-              style={{ display: "flex", 
-              flexDirection: "row", 
-              flexWrap:"nowrap", 
-              alignItems: "stretch", 
-              alignContent: "stretch"}}>
-              
-              <div className="image" style={{ marginright: "0 vw"}}>
-              <Card.Img
-                variant="left"
-                src={product.img}
-                alt="product img"
-                className="allProductsImg"
-              />
-              </div>
-              <div className="productInfo">
-              <Card.Title> <h3>{product.name}</h3><h6>Price: {product.price} €</h6></Card.Title>
-              <Card.Body>
-                <Card.Text>             
-                  <p>Condition: {product.condition}</p>
-                  <p>Category: {product.category}</p>
-                  <p>Description: {product.description}</p>
-                  <p>Seller: {product.seller && product.seller.name}</p>
-                </Card.Text>
-              </Card.Body>
-              </div>
+              <Card
+                className="product-card"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  alignContent: 'center',
+                  width: '60vw',
+                  margin: 'auto',
+                  borderRadius: '15px',
+                }}
+              >
+                <Card.Img
+                  variant="left"
+                  src={product.img}
+                  alt="product img"
+                  className="allProductsImg"
+                  style={{
+                    border: 'solid black 2px',
+                    borderRadius: '15px',
+                    marginLeft: '0px',
+                    width: '25vw',
+                    height: '30vh',
+                  }}
+                />
+
+                <Card.Body>
+                  <Card.Title>
+                    <h3>{product.name}</h3>
+                    <hr style={{ width: '20vw' }} />
+                  </Card.Title>
+                  <Card.Text>
+                    <h5>Price: {product.price} €</h5>
+                    <br />
+                    <h8>Condition: {product.condition} </h8>
+                    <br />
+                    <h8>Category: {product.category}</h8>
+                    <br />
+                    <br />
+                    <h8>Seller: {product.seller && product.seller.name}</h8>
+                  </Card.Text>
+                </Card.Body>
               </Card>
-              <br />              
+              <br />
             </Link>
-            
           );
         })}
     </section>

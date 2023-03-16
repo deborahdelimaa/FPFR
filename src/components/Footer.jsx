@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,15 +6,16 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Footer() {
   return (
-    <footer className='footer'>
+    <footer className="footer">
+      <Navbar.Brand style={{ fontSize: '1em' }}>
+        {' '}
+        © All rights reserved to Buyables
+      </Navbar.Brand>
 
-     <Navbar.Brand style={{fontSize:"1em"}}> © All rights reserved to Buyables</Navbar.Brand>
+      <section style={{ fontSize: '1em' }}>Colaborators:</section>
+      <p>Duarte França</p>
 
-     <section style={{fontSize:"1em"}}>Colaborators:</section>
-     <p>Duarte França</p>
-
-    
-{/* <Navbar className='footer' collapseOnSelect expand="lg" bg="green" variant="light">
+      {/* <Navbar className='footer' collapseOnSelect expand="lg" bg="green" variant="light">
       <Container>
       
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -40,9 +41,8 @@ function Footer() {
         </Navbar.Collapse>
       </Container>
     </Navbar> */}
-
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -14,16 +14,16 @@ function Favorites() {
 
   const { user } = useContext(AuthContext);
   const { id } = useParams();
-  
-  const storedToken = localStorage.getItem("authToken");
-console.log(searchProducts)
+
+  const storedToken = localStorage.getItem('authToken');
+  console.log(searchProducts);
 
   const addFavorite = async () => {
     const response = await axios.get(
       `${import.meta.env.VITE_API_URL}/auth/user/${user._id}`
     );
     console.log(response.data);
-    setSearchProducts(response.data.favorite)
+    setSearchProducts(response.data.favorite);
     setProduct(response.data.favorite);
   };
 
@@ -31,17 +31,16 @@ console.log(searchProducts)
     addFavorite();
   }, [user]);
 
-
-
   const deleteFavorite = async () => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/api/favorites/${searchProducts._id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${storedToken}`,
-        },
-      });
-
+      await axios.delete(
+        `${import.meta.env.VITE_API_URL}/api/favorites/${searchProducts._id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${storedToken}`,
+          },
+        }
+      );
     } catch (error) {
       console.log(error);
     }
@@ -51,45 +50,63 @@ console.log(searchProducts)
     deleteFavorite();
   }, []);
 
-
-  console.log("this is the products", product)
+  console.log('this is the products', product);
 
   return (
     <div>
-      <h1>Favorites</h1>
+      <br />
 
       {product.length > 0 &&
         product.map((product) => {
           return (
-            <>
-            <br />
-              <Card className="product-card">
-                <Card.Title>{product.name}</Card.Title>
+            <div className="favoriteProducts">
+              <Card
+                className="product-card"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  alignContent: 'center',
+                  width: '60vw',
+                  margin: 'auto',
+                  borderRadius: '15px',
+                }}
+              >
+                <Card.Img
+                  variant="left"
+                  src={product.img}
+                  alt="product img"
+                  className="allProductsImg"
+                  style={{
+                    border: 'solid black 2px',
+                    borderRadius: '15px',
+                    marginLeft: '0px',
+                    width: '25vw',
+                    height: '30vh',
+                  }}
+                />
+
                 <Card.Body>
-                  <Card.Img
-                    variant="left"
-                    src={product.img}
-                    alt="product img"
-                    className="allProductsImg"
-                  />
+                  <Card.Title>
+                    <h3>{product.name}</h3>
+                    <hr style={{ width: '20vw' }} />
+                  </Card.Title>
                   <Card.Text>
+                    Price: {product.price} €
+                    <br />
+                    <br />
                     Category: {product.category}
                     <br />
                     Condition: {product.condition}
                     <br />
-                    Price: {product.price} €
                     <br />
                     Description: {product.description}
-                    <br />
-                    Seller: {product.seller && product.seller.name}
-                    <button  onClick={deleteFavorite}>delete</button>
                   </Card.Text>
-                  
                 </Card.Body>
-                
               </Card>
               <br />
-            </>
+            </div>
           );
         })}
     </div>

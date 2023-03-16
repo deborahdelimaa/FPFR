@@ -31,7 +31,7 @@ function Login() {
       await authenticateUser();
 
       console.log(response.data.authToken);
-      navigate("/");
+      navigate('/');
     } catch (error) {
       console.log(error);
     }

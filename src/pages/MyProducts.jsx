@@ -27,40 +27,72 @@ function MyProducts() {
 
   return (
     <section>
-      <h1>My Products</h1>
-      <br/>
+      <br />
       {myProducts.length > 0 &&
         myProducts.map((product) => {
           return (
-            
-            <Card className='product-card'>
-                <Card.Title>{product.name}</Card.Title>
+            <div className="myProducts">
+              <Card
+                className="product-card"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  alignContent: 'center',
+                  width: '60vw',
+                  margin: 'auto',
+                  borderRadius: '15px',
+                }}
+              >
+                <Card.Img
+                  variant="left"
+                  src={product.img}
+                  alt="product img"
+                  className="allProductsImg"
+                  style={{
+                    border: 'solid black 2px',
+                    borderRadius: '15px',
+                    marginLeft: '0px',
+                    width: '25vw',
+                    height: '30vh',
+                  }}
+                />
+
                 <Card.Body>
-                  <Card.Img
-                    variant="left"
-                    src={product.img}
-                    alt="product img"
-                    className="allProductsImg"
-                  />
+                  <Card.Title>
+                    <h3>{product.name}</h3>
+                    <hr style={{ width: '20vw' }} />
+                  </Card.Title>
                   <Card.Text>
-                    Category: {product.category}
+                    <h5>Price: {product.price} €</h5>
                     <br />
-                    Condition: {product.condition}
+                    <h8>Condition: {product.condition} </h8>
                     <br />
-                    Price: {product.price} €
+                    <h8>Category: {product.category}</h8>
                     <br />
-                    Description: {product.description}
                     <br />
-                    Seller: {product.seller && product.seller.name}
+                    <h8>Description: {product.description}</h8>
+                    <br />
+                    <br />
+
+                    {product && (
+                      <button className="submit" style={{ hover: 'none' }}>
+                        <Link
+                          className="review-button"
+                          to={`/products/edit/${product._id}`}
+                        >
+                          Edit product
+                        </Link>
+                      </button>
+                    )}
                   </Card.Text>
                 </Card.Body>
-                {product && <Link to={`/products/edit/${product._id}`}>Edit product</Link>}
               </Card>
-            
-            
+              <br />
+            </div>
           );
         })}
-        
     </section>
   );
 }

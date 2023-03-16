@@ -27,7 +27,7 @@ function ProductsDetails() {
       `${import.meta.env.VITE_API_URL}/api/buy/${user._id}/${id}`
     );
     console.log(response.data);
-  navigate('/products/bought'); 
+    navigate('/products/bought');
   };
 
   useEffect(() => {
@@ -39,10 +39,8 @@ function ProductsDetails() {
       `${import.meta.env.VITE_API_URL}/api/favorites/${user._id}/${id}`
     );
     console.log(response.data);
-      navigate("/favorites");
-    
-    }
-  
+    navigate('/favorites');
+  };
 
   useEffect(() => {
     getProduct();
@@ -52,59 +50,126 @@ function ProductsDetails() {
     <div>
       {product && (
         <>
-        <br />
-          <Card className="product-card">
-            <Card.Title>{product.name}</Card.Title>
-            <Card.Body>
+          <br />
+          <Card
+            className="product-card"
+            style={{
+              display: 'flex',
+              alignItems: 'left',
+              alignContent: 'center',
+              width: '60vw',
+              margin: 'auto',
+              borderRadius: '15px',
+            }}
+          >
+            <h3>{product.name}</h3>
+            <br />
+            <Card.Body
+              style={{
+                direction: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                justifyContent: 'space-around',
+                alignItems: 'center',
+                alignContent: 'center',
+              }}
+            >
               <Card.Img
+                style={{
+                  border: 'solid black 2px',
+                  borderRadius: '15px',
+                  width: '30vw',
+                  height: '30vh',
+                  alignItems: 'center',
+                }}
                 variant="left"
                 src={product.img}
                 alt="product img"
                 className="allProductsImg"
               />
+              <br />
+              <br />
+              <hr />
               <Card.Text>
-                Category: {product.category}
+                <h5>Price: {product.price} €</h5>
                 <br />
-                Condition: {product.condition}
                 <br />
-                Price: {product.price} €
+                <h8>Condition: {product.condition} </h8>
                 <br />
-                Description: {product.description}
+                <h8>Category: {product.category}</h8>
                 <br />
-                Seller: {product.seller && product.seller.name}
-                
+                <br />
+                <h8>Description: {product.description}</h8>
               </Card.Text>
             </Card.Body>
+
             <button
+              style={{ backgroundColor: '#A8EDB8' }}
               className="submit"
               type="submit"
               onClick={() => buyProduct()}
             >
               Buy Product
             </button>
+
             <button
+              style={{ width: '45vw' }}
               className="submit"
               type="submit"
               onClick={() => addFavorite()}
-            >Add to Favorites</button>
-            {product && <button className='submit' style={{backgroundColor:"#3FB8C3"}}> <Link  className='review-button' to={`/review/${product._id}`}>Add a review</Link></button>}
+            >
+              Add to Favorites
+            </button>
+
+            {product && (
+              <button
+                className="submit"
+                style={{ backgroundColor: '#3FB8C3', width: '35vw' }}
+              >
+                <Link className="review-button" to={`/review/${product._id}`}>
+                  Add a review
+                </Link>
+              </button>
+            )}
           </Card>
           <br />
 
-          <Card className="product-card">
-            <h4 style={{width:"70vw", margin:"auto", color:"#22577a"}}>Reviews:</h4>
-                <br />
-               
-                {product.feedback.map((review) => {
-                  return <div style={{width:"70vw", margin:"auto"}}>
+          <Card
+            className="product-card"
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              alignContent: 'center',
+              width: '60vw',
+              margin: 'auto',
+              borderRadius: '15px',
+            }}
+          >
+            <h4 style={{ width: '50vw', margin: 'auto', color: '#22577a' }}>
+              Reviews:
+            </h4>
+            <br />
+
+            {product.feedback.map((review) => {
+              return (
+                <div style={{ width: '70vw', margin: 'auto' }}>
                   <br />
-                 <h5> Rating: {review.rating}</h5>
-                  {review.comment[0]}
+                  <h5 style={{ margin: 'auto', width: '45vw' }}>
+                    {' '}
+                    Rating: {review.rating}
+                  </h5>
+                  <br />
+                  <h6 style={{ margin: 'auto', width: '45vw' }}>
+                    {review.comment[0]}
+                  </h6>
                   <br />
                   <br />
-                  <hr style={{width:"70vw", margin:"auto"}}/>
-                  </div>;
-                })}
+                  <hr style={{ width: '50vw', margin: 'auto' }} />
+                </div>
+              );
+            })}
           </Card>
         </>
       )}

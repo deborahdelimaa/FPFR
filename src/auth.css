@@ -37,6 +37,7 @@ body {
 
 .card {
   padding: 2em;
+  color:#22577a;
 }
 
 .read-the-docs {
@@ -95,6 +96,7 @@ body {
   background: transparent;
   color: #22577a;
 }
+
 
 .main-input:focus {
   outline: none;
@@ -160,9 +162,15 @@ body {
   color: #22577A;
 }
 
+
 .link:hover {
   text-decoration:none;
-  color: black;
+  color: #22577A;
+}
+
+Link {
+  text-decoration:none;
+  color: #22577A;
 }
 
 .formdiv {
@@ -192,4 +200,6 @@ body {
   background-color: rgb(144, 3, 3); 
   border:5px solid rgb(144, 3, 3);
 }
+
+
 
