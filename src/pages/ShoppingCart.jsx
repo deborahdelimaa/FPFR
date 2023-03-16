@@ -44,6 +44,7 @@ function ShoppingCart() {
                   width: '60vw',
                   margin: 'auto',
                   borderRadius: '15px',
+                  backgroundColor:"rgba(255, 255, 255, 0.58)"                
                 }}
               >
                 <Card.Img
