@@ -1,14 +1,14 @@
-import React, { useState, useContext } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/auth.context';
+import React, { useState, useContext } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
 
-import '../auth.css';
+import "../auth.css";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleEmail = (e) => setEmail(e.target.value);
@@ -28,14 +28,15 @@ function Login() {
 
       // To store the token on the localStorage - Only for the login
 
-      localStorage.setItem('authToken', response.data.authToken);
+      localStorage.setItem("authToken", response.data.authToken);
 
       await authenticateUser();
 
       console.log(response.data.authToken);
-      navigate('/');
+      navigate("/");
     } catch (error) {
       console.log(error);
+      setErrorMessage(error.response.data.message);
     }
   };
 
@@ -70,12 +71,12 @@ function Login() {
         <button className="submit">submit</button>
       </form>
       {errorMessage && (
-          <p className="error-card text-red-500 text-center my-6">
-            {errorMessage}
-          </p>
-        )}
+        <p className="error-card text-red-500 text-center my-6">
+          {errorMessage}
+        </p>
+      )}
       <p className="auth-paragraph">
-        Don't have an account?{' '}
+        Don't have an account?{" "}
         <Link className="link" to="/signup">
           Signup
         </Link>

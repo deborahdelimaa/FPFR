@@ -8,6 +8,7 @@ function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleName = (e) => setName(e.target.value);
   const handleEmail = (e) => setEmail(e.target.value);
@@ -26,6 +27,7 @@ function Signup() {
       navigate('/login');
     } catch (error) {
       console.log(error);
+      setErrorMessage(error.response.data.message);
     }
   };
 
@@ -71,6 +73,11 @@ function Signup() {
         </div>
         <button className="submit">submit</button>
       </form>
+      {errorMessage && (
+        <p className="error-card text-red-500 text-center my-6">
+          {errorMessage}
+        </p>
+      )}
       <p className="auth-paragraph">
         Already have an account?{' '}
         <Link className="link" to="/Login">
