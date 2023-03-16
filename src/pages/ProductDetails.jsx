@@ -60,9 +60,10 @@ function ProductsDetails() {
               width: '60vw',
               margin: 'auto',
               borderRadius: '15px',
+              backgroundColor:"rgba(255, 255, 255, 0.58)"
             }}
           >
-            <h3>{product.name}</h3>
+            <h3 style={{marginLeft:"1vw"}}>{product.name}</h3>
             <br />
             <Card.Body
               style={{
@@ -72,6 +73,7 @@ function ProductsDetails() {
                 justifyContent: 'space-around',
                 alignItems: 'center',
                 alignContent: 'center',
+                
               }}
             >
               <Card.Img
@@ -104,7 +106,7 @@ function ProductsDetails() {
             </Card.Body>
 
             <button
-              style={{ backgroundColor: '#A8EDB8' }}
+              style={{ backgroundColor: '#80ED99' }}
               className="submit"
               type="submit"
               onClick={() => buyProduct()}
@@ -113,7 +115,7 @@ function ProductsDetails() {
             </button>
 
             <button
-              style={{ width: '45vw' }}
+              
               className="submit"
               type="submit"
               onClick={() => addFavorite()}
@@ -124,7 +126,7 @@ function ProductsDetails() {
             {product && (
               <button
                 className="submit"
-                style={{ backgroundColor: '#3FB8C3', width: '35vw' }}
+                style={{ backgroundColor: '#3FB8C3' }}
               >
                 <Link className="review-button" to={`/review/${product._id}`}>
                   Add a review
@@ -145,9 +147,10 @@ function ProductsDetails() {
               width: '60vw',
               margin: 'auto',
               borderRadius: '15px',
+              backgroundColor:"rgba(255, 255, 255, 0.58)"
             }}
           >
-            <h4 style={{ width: '50vw', margin: 'auto', color: '#22577a' }}>
+            <h4 style={{ width: '50vw', margin: 'auto', color: '#22577a', marginBottom:"2vh" }}>
               Reviews:
             </h4>
             <br />

@@ -16,7 +16,7 @@ function Favorites() {
   const { id } = useParams();
 
   const storedToken = localStorage.getItem('authToken');
-  console.log(searchProducts);
+  console.log(product);
 
   const addFavorite = async () => {
     const response = await axios.get(
@@ -34,7 +34,7 @@ function Favorites() {
   const deleteFavorite = async () => {
     try {
       await axios.delete(
-        `${import.meta.env.VITE_API_URL}/api/favorites/${searchProducts._id}`,
+        `${import.meta.env.VITE_API_URL}/api/favorites/${product._id}`,
         {
           headers: {
             Authorization: `Bearer ${storedToken}`,
@@ -71,6 +71,7 @@ function Favorites() {
                   width: '60vw',
                   margin: 'auto',
                   borderRadius: '15px',
+                  backgroundColor:"rgba(255, 255, 255, 0.58)"
                 }}
               >
                 <Card.Img
@@ -79,9 +80,10 @@ function Favorites() {
                   alt="product img"
                   className="allProductsImg"
                   style={{
-                    border: 'solid black 2px',
+                    border: 'solid #22577A 2px',
                     borderRadius: '15px',
                     marginLeft: '0px',
+                    marginRight:"4vw",
                     width: '25vw',
                     height: '30vh',
                   }}
@@ -103,6 +105,7 @@ function Favorites() {
                     <br />
                     Description: {product.description}
                   </Card.Text>
+                  <button onClick={deleteFavorite}>delete</button>
                 </Card.Body>
               </Card>
               <br />
