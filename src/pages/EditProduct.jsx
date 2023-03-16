@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import '../auth.css';
+import Icon from "../images/addImg.png";
 
 function EditProduct() {
   const { user } = useContext(AuthContext);
@@ -99,6 +100,27 @@ function EditProduct() {
         onSubmit={handleSubmit}
       >
         <p>Edit product:</p>
+
+        <div className="test">
+        <label className='add-img' for="img">
+          <i style={{ cursor: "pointer" }}>
+            <img src={Icon} style={{ width: "3vw" }} alt="" />
+          </i>
+        </label>
+
+        <input
+          style={{
+            width: '',
+            fontSize:"0.8em"
+          }}
+          className="main-input-image"
+          type="file"
+          name="img"
+          id="img"
+          onChange={(e) => handleFileUpload(e)}
+        />
+        </div>
+
         <input
           required="true"
           className="main-input"
@@ -159,19 +181,7 @@ function EditProduct() {
           })}
         </select>
 
-        <input
-          style={{
-            width: '15vw',
-            alignContent: 'flex-end',
-            alignItems: 'flex-end',
-          }}
-          className="main-input"
-          type="file"
-          name="img"
-          id="img"
-          onChange={(e) => handleFileUpload(e)}
-        />
-
+        
         <button
           style={{ marginRight: '0.5vw' }}
           className="submit"

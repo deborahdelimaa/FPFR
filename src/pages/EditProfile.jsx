@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import '../auth.css';
 import service from '../services/user.service';
+import Icon from "../images/addImg.png";
 
 function EditProfile() {
   const [name, setName] = useState('');
@@ -82,7 +83,30 @@ function EditProfile() {
         onSubmit={handleSubmit}
       >
         <p>Edit profile</p>
+
+        <div className="test">
+        <label className='add-img' for="img">
+          <i style={{ cursor: "pointer" }}>
+            <img src={Icon} style={{ width: "3vw" }} alt="" />
+          </i>
+        </label>
+
+        <input
+          style={{
+            width: '',
+            fontSize:"0.8em"
+          }}
+          className="main-input-image"
+          type="file"
+          name="img"
+          id="img"
+          onChange={(e) => handleFileUpload(e)}
+        />
+        </div>
+        <br />
+        <br />
         <div className="group">
+        
           <input
             required="true"
             className="main-input"
@@ -105,13 +129,7 @@ function EditProfile() {
             <label className="lebal-email">Contact</label>
           </div>
           <br />
-          <div className="group">
-            <input
-              className="main-input"
-              type="file"
-              onChange={(e) => handleFileUpload(e)}
-            />
-          </div>
+         
         </div>
         <button className="submit">Edit Profile</button>
       </form>

@@ -85,6 +85,26 @@ function AddProduct() {
       >
         <p>Create Product:</p>
 
+        <div className="test">
+        <label className='add-img' for="img">
+          <i style={{ cursor: "pointer" }}>
+            <img src={Icon} style={{ width: "3vw" }} alt="" />
+          </i>
+        </label>
+
+        <input
+          style={{
+            width: '',
+            fontSize:"0.8em"
+          }}
+          className="main-input-image"
+          type="file"
+          name="img"
+          id="img"
+          onChange={(e) => handleFileUpload(e)}
+        />
+        </div>
+
         <input
           required="true"
           className="main-input"
@@ -95,7 +115,6 @@ function AddProduct() {
           onChange={handleName}
           placeholder="Name"
         />
-        <br />
         <input
           required="true"
           className="main-input"
@@ -106,7 +125,6 @@ function AddProduct() {
           onChange={handleDescription}
           placeholder="Description"
         />
-        <br />
         <input
           required="true"
           className="main-input"
@@ -146,29 +164,11 @@ function AddProduct() {
           })}
         </select>
         <br />
-        
-        <label for="img">
-          <i style={{ cursor: "pointer" }}>
-            <img src={Icon} style={{ width: "3vw" }} alt="" />
-          </i>
-        </label>
-
-        <input
-          style={{
-            width: '15vw',
-            alignContent: 'flex-end',
-            alignItems: 'flex-end',
-          }}
-          className="main-input"
-          type="file"
-          name="img"
-          id="img"
-          onChange={(e) => handleFileUpload(e)}
-        />
 
         <button required="true" className="submit" type="submit">
           Create Product
         </button>
+
       </form>
     </section>
   );

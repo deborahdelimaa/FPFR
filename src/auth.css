@@ -201,5 +201,33 @@ Link {
   border:5px solid rgb(144, 3, 3);
 }
 
+.main-input-image {
+  font-size: 16px;
+  margin: auto;
+  padding: 10px 10px 10px 30px;
+  display: block;
+  width: 185px;
+  border: none;
+  background: transparent;
+  color: #22577a;
+  width: 15vw;
+}
+
+::-webkit-file-upload-button{
+  display: none;
+}
+
+.test{
+  border: solid #22577a 1px;
+  border-radius: 15px;
+  margin: auto;
+  align-items: center;
+  align-content: center;
+}
+
+.add-img{
+  margin-left: 6vw;
+  margin-top: 2vh;
+}
 
 
