@@ -159,6 +159,19 @@ function EditProduct() {
           })}
         </select>
 
+        <input
+          style={{
+            width: '15vw',
+            alignContent: 'flex-end',
+            alignItems: 'flex-end',
+          }}
+          className="main-input"
+          type="file"
+          name="img"
+          id="img"
+          onChange={(e) => handleFileUpload(e)}
+        />
+
         <button
           style={{ marginRight: '0.5vw' }}
           className="submit"
@@ -166,8 +179,9 @@ function EditProduct() {
         >
           Edit Product
         </button>
+        <br />
         <button
-          style={{ margin: 'auto' }}
+          style={{ margin: 'auto', backgroundColor:"#d7595c", color:"#fa9c9e" }}
           className="submit"
           onClick={deleteProduct}
         >

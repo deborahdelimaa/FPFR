@@ -53,6 +53,12 @@ function Navigationbar() {
                   >
                     Favorites
                   </NavDropdown.Item>
+                  <NavDropdown.Item
+                    style={{ backgroundColor: '#3FB8C3', color: '#D0EBD7' }}
+                    href="/products/bought"
+                  >
+                    Shopping Cart
+                  </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item
                     style={{ backgroundColor: '#3FB8C3', color: '#D0EBD7' }}

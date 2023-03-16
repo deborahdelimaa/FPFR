@@ -146,16 +146,19 @@ function AddProduct() {
           })}
         </select>
         <br />
+        
         <label for="img">
           <i style={{ cursor: 'pointer' }}>
             <img src={Icon} style={{ width: '3vw' }} alt="" />
           </i>
         </label>
+
         <input
           style={{
             width: '15vw',
             alignContent: 'flex-end',
             alignItems: 'flex-end',
+            display: "hidden"
           }}
           className="main-input"
           type="file"
