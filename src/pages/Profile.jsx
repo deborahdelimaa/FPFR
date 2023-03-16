@@ -25,39 +25,39 @@ function Profile() {
   }, [loading]);
 
   return (
-    <div>
-      <h1>My profile</h1>
+    
+    <section className="formdiv">
       {profile && (
         <Figure
-          style={{
-            border: '2px solid white',
-            marginLeft: '3vw',
-            marginTop: '3vh',
-            borderRadius: '5px',
-            width: '50vw',
-          }}
+          style={{ marginTop: "4vh", width: "35vw", padding: "5vh" }}
+        className="form"
         >
+        <p>My Profile</p>
           <Figure.Image
             style={{ marginLeft: '1vw', marginTop: '3vh' }}
-            width={171}
-            height={180}
+            width={100}
+            height={100}
             alt="profile-picture"
             src={profile.img}
           />
+          <br />
+          <br />
           <Figure.Caption
-            style={{ fontSize: '3em', color: 'white', marginLeft: '1vw' }}
+            style={{ fontSize: '3em', color: 'white', marginLeft: '1vw', borderBottom:"1px solid #6c6c6c"}}
           >
-            {profile.name}
+            <p>Name: {profile.name}</p>
           </Figure.Caption>
+          <br />
           <Figure.Caption
-            style={{ fontSize: '2.5em', color: 'white', marginLeft: '1vw' }}
+            style={{ fontSize: '2.5em', color: 'white', marginLeft: '1vw', borderBottom:"1px solid #6c6c6c", Width:"5vw" }}
           >
-            {profile.email}
+            <p>Email: {profile.email}</p>
           </Figure.Caption>
+          <br />
           <Figure.Caption
-            style={{ fontSize: '2.5em', color: 'white', marginLeft: '1vw' }}
+            style={{ fontSize: '2.5em', color: 'white', marginLeft: '1vw', borderBottom:"1px solid #6c6c6c" }}
           >
-            {profile.contact}
+            <p>Contact: {profile.contact}</p>
           </Figure.Caption>
         </Figure>
       )}
@@ -69,7 +69,7 @@ function Profile() {
           </Link>{' '}
         </button>
       )}
-    </div>
+    </section>
   );
 }
 
