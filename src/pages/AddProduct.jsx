@@ -71,7 +71,7 @@ function AddProduct() {
       setCondition("");
       setDescription("");
 
-      navigate("/products");
+      navigate("/myproducts");
     } catch (error) {
       console.log(error);
     }
