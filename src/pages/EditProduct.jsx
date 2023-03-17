@@ -122,7 +122,6 @@ function EditProduct() {
         </div>
 
         <input
-          required="true"
           className="main-input"
           type="text"
           name="name"
@@ -132,7 +131,6 @@ function EditProduct() {
         />
         <br />
         <input
-          required="true"
           className="main-input"
           type="text"
           name="description"
@@ -143,7 +141,6 @@ function EditProduct() {
         />
         <br />
         <input
-          required="true"
           className="main-input"
           type="text"
           name="price"
@@ -155,7 +152,6 @@ function EditProduct() {
         <br />
         <select
           style={{ height: '6vh' }}
-          required="true"
           className="main-input"
           name="category"
           id="category"
@@ -169,7 +165,6 @@ function EditProduct() {
         <br />
         <select
           style={{ height: '6vh' }}
-          required="true"
           className="main-input"
           name="condition"
           id="condition"
