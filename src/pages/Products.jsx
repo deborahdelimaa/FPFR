@@ -75,7 +75,7 @@ function Products() {
       <br />
       <div
         className="searchbar-div"
-        style={{ marginLeft: '20vw', width: '40vw' }}
+        style={{ marginLeft: '20vw',  }}
       >
         <Searchbar
           setCategory={setCategory}

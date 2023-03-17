@@ -82,7 +82,6 @@ function Favorites() {
                     marginLeft: '0px',
                     marginRight: '4vw',
                     width: '25vw',
-                    height: '30vh',
                   }}
                 />
 

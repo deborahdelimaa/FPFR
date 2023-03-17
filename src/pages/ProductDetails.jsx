@@ -81,7 +81,6 @@ function ProductsDetails() {
                   border: 'solid black 2px',
                   borderRadius: '15px',
                   width: '30vw',
-                  height: '30vh',
                   alignItems: 'center',
                 }}
                 variant="left"
